@@ -13,9 +13,11 @@ actual CPU allocation visible inside the job, package versions, and runtime.
 Any mismatch exits nonzero.
 
 All HF runs use the CPU-only `cpu-upgrade` flavor and the pinned image
-`ghcr.io/astral-sh/uv:0.11.29-python3.12-bookworm-slim`. The initial generic
+`ghcr.io/astral-sh/uv:0.11.29-python3.12-trixie-slim`. The initial generic
 `python:3.12` launch failed before execution because that image had no `uv`;
-it produced no scientific result.
+the second launch also failed before execution because its now-removed
+Bookworm image tag could not be pulled. Neither launch produced a scientific
+result.
 
 This baseline makes no scientific claim and earns no forecast points. Its
 purpose is to freeze provenance and prevent later experimental nodes from
