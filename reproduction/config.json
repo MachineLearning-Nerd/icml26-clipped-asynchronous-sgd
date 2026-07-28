@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "campaign": "arxiv-2606.13287",
+  "mode": "baseline",
+  "seed": 20260728,
+  "compute_plan": {
+    "estimated_cores": 1,
+    "runtime_class": "uncertain because the frozen environment must be installed",
+    "backend": "hf",
+    "flavor": "cpu-upgrade",
+    "gpu_allowed": false
+  },
+  "accepted_claims": []
+}
+
