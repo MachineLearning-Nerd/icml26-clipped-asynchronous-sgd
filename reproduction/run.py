@@ -87,8 +87,27 @@ def validate_provenance() -> list[str]:
         / "provenance"
         / "judged_space_manifest.sha256"
     )
-    if len(manifest.read_text(encoding="utf-8").splitlines()) != 13:
+    manifest_lines = [
+        line
+        for line in manifest.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    if len(manifest_lines) != 13:
         errors.append("judged Space manifest must contain exactly 13 protected files")
+    manifest_paths = [line.split(maxsplit=1)[1] for line in manifest_lines]
+    protected_paths = [
+        line
+        for line in (
+            ROOT
+            / ".openresearch"
+            / "artifacts"
+            / "provenance"
+            / "judged_space_files.txt"
+        ).read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    if manifest_paths != protected_paths:
+        errors.append("judged Space manifest paths do not match protected file list")
     return errors
 
 
@@ -148,4 +167,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
