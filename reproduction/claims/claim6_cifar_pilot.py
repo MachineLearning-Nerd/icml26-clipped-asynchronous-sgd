@@ -198,6 +198,7 @@ def run_config(config: PilotConfig) -> dict[str, object]:
     clipped_count = 0
     gradient_norms = []
     staleness = []
+    diverged_at_time: float | None = None
 
     def schedule(worker: int, current_time: float) -> None:
         nonlocal sequence
@@ -243,6 +244,9 @@ def run_config(config: PilotConfig) -> dict[str, object]:
         ) = heapq.heappop(event_queue)
         if current_time > TIME_CAP:
             break
+        if not math.isfinite(norm):
+            diverged_at_time = current_time
+            break
         with torch.no_grad():
             gradient_index = 0
             for parameter in model.parameters():
@@ -286,6 +290,8 @@ def run_config(config: PilotConfig) -> dict[str, object]:
         "target_accuracy": TARGET_ACCURACY,
         "first_hit_time": first_hit_time,
         "reached_target": first_hit_time is not None,
+        "diverged": diverged_at_time is not None,
+        "diverged_at_time": diverged_at_time,
         "last_event_time": last_time,
         "oracle_calls": update_count,
         "mean_time_per_oracle_call": last_time / update_count,

@@ -1,5 +1,5 @@
-# Claim 6 CIFAR-10 calibration
+# Historical rejected baseline
 
-This is faithful real-data calibration, not full claim evidence. Current
-status: **BLOCKED** until all paper learning rates, clipping radii, both delay
-factors, and three seeds are run with uncertainty estimates and controls.
+This one-seed, three-configuration pilot was calibration, not full claim
+evidence. The descendant `claim6_d4_sweep` verifier supersedes it by covering
+the entire D=4 paper hyperparameter domain and exact time cap.
