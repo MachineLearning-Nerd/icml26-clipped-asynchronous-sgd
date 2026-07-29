@@ -1,6 +1,6 @@
-# Claim 6 scheduler evaluator note
+# Historical rejected baseline
 
-This is a non-neural prerequisite. It can reject an incorrect asynchronous
-event model, but it cannot earn full Claim 6 credit. The verdict remains
-**BLOCKED** until the same scheduler drives the complete three-seed,
-label-skew CIFAR-10 CNN sweep and its speedups are independently checked.
+The predeclared calibration passed at `D=4` but failed at `D=8`. This is
+preserved as a rejected specification route, not presented as current
+verification and not counted as neural evidence. The current verifier in the
+descendant revision supersedes this route.

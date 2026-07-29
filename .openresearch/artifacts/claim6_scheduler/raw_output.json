@@ -1,0 +1,55 @@
+{
+  "algorithm": "16-job closed queue; uniform worker resampling; one single-server queue per worker; 8 service times 1 and 8 service times D",
+  "burn_in_events": 2000,
+  "cases": [
+    {
+      "absolute_error": 0.009525252525252548,
+      "delay_factor": 4,
+      "matches_paper_caption": true,
+      "paper_mean_time_per_oracle_call": 0.337,
+      "per_seed_mean_time": [
+        0.3276313131313131,
+        0.3264747474747475,
+        0.32831818181818184
+      ],
+      "reconstructed_mean_time": 0.3274747474747475,
+      "seeds": [
+        20261128,
+        20261129,
+        20261130
+      ],
+      "tolerance": 0.015,
+      "wrong_control_rejected": true,
+      "wrong_no_queue_mean_time": 0.1
+    },
+    {
+      "absolute_error": 0.02521043771043785,
+      "delay_factor": 8,
+      "matches_paper_caption": false,
+      "paper_mean_time_per_oracle_call": 0.668,
+      "per_seed_mean_time": [
+        0.6469141414141414,
+        0.6415,
+        0.6399545454545454
+      ],
+      "reconstructed_mean_time": 0.6427895622895622,
+      "seeds": [
+        20261528,
+        20261529,
+        20261530
+      ],
+      "tolerance": 0.015,
+      "wrong_control_rejected": true,
+      "wrong_no_queue_mean_time": 0.1111111111111111
+    }
+  ],
+  "claim_number": 6,
+  "events_per_case_seed": 200000,
+  "negative_control": "reschedule only the completing worker (no queues)",
+  "reason": "Scheduler fidelity is necessary but does not verify the Figure 4 accuracy/speedup claim without real label-skew CIFAR-10 training.",
+  "runtime_seconds": 1.081917,
+  "schema_version": 1,
+  "scope": "Algorithm 2 scheduler prerequisite; no neural claim yet",
+  "status": "FAIL",
+  "verdict": "BLOCKED"
+}

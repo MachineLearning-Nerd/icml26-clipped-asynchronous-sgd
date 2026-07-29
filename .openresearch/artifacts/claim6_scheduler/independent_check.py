@@ -1,4 +1,4 @@
-"""Independent aggregate and negative-control checker."""
+"""Independent checker for the preserved failed scheduler calibration."""
 
 from __future__ import annotations
 
@@ -34,8 +34,13 @@ def main() -> int:
         )
         if expected_rejection != case["wrong_control_rejected"]:
             errors.append(f"D={case['delay_factor']} control flag incorrect")
-        if not expected_match or not expected_rejection:
-            errors.append(f"D={case['delay_factor']} contract failed")
+        if not expected_rejection:
+            errors.append(f"D={case['delay_factor']} negative control was not rejected")
+    match_flags = [case["matches_paper_caption"] for case in result["cases"]]
+    if match_flags != [True, False]:
+        errors.append("preserved scientific outcome must be PASS at D=4 and FAIL at D=8")
+    if result["status"] != "FAIL":
+        errors.append("source calibration status must remain FAIL")
     if result["verdict"] != "BLOCKED":
         errors.append("scheduler-only evidence must not claim the neural result")
     output = {

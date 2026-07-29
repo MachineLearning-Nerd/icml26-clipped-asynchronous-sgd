@@ -1,0 +1,9 @@
+{
+  "claim_number": 6,
+  "source_anchor": "Section 5 Algorithm 2; Section 6 and Figure 4 caption",
+  "route": "finite-horizon scheduler audit",
+  "contract": "At the paper's independently specified time caps, generate 512 independent triplets of Algorithm 2 schedules and determine whether each caption mean lies in the two-sided empirical 99% prediction interval.",
+  "decision_rule": "Record alignment or divergence exactly; the verifier passes only when raw triplets, aggregate statistics, source domains, and controls recompute exactly.",
+  "negative_control": "The homogeneous no-queue harmonic-throughput model must remain outside the empirical 99% interval.",
+  "scope": "This route cannot verify the CNN speedup and keeps Claim 6 BLOCKED."
+}
