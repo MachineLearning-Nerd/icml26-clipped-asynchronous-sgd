@@ -1,0 +1,9 @@
+{
+  "claim_number": 6,
+  "route": "complete D=8 selection-seed hyperparameter sweep",
+  "contract": "For the preregistered selection seed, run vanilla ASGD at all nine paper learning rates and Clipped ASGD at all nine learning rates crossed with four clipping radii, using real label-skew CIFAR-10, Algorithm 2, and the exact 12,000-time-unit D=8 cap.",
+  "selection_rule": "Within each method, select the smallest first 70%-accuracy hit time. A run without a hit is censored at the paper cap and cannot win.",
+  "non_circularity": "No configuration is pruned and the event budget comes from the paper, not an observed or predicted result.",
+  "negative_control": "The initialized model must remain below 70%.",
+  "terminal_claim_verdict": "BLOCKED pending independent three-seed winner repeats."
+}

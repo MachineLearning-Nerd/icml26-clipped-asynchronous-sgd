@@ -1,6 +1,7 @@
-# Claim 6 current verification
+# Claim 6 D=4 accepted intermediate verification
 
-This is the current D=4 verifier and supersedes the historical pilot. It covers
-the complete paper hyperparameter domain at the exact cap, but Claim 6 remains
-**BLOCKED** until D=8 and independent three-seed winner validation are
-complete.
+The complete paper hyperparameter domain reached an observed 1.235x speedup
+at the exact D=4 cap (paper: 1.2x). The accepted raw output is now hash-pinned
+and checked without rerunning the 2.5-hour grid. This supersedes the historical
+pilot, but Claim 6 remains **BLOCKED** until D=8 and independent three-seed
+winner validation are complete.

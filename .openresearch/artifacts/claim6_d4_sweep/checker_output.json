@@ -1,0 +1,14 @@
+{
+  "best_clipped": {
+    "name": "clipped_lr_2^-5_c4",
+    "time": 3400.0
+  },
+  "best_vanilla": {
+    "name": "vanilla_lr_2^-5",
+    "time": 4200.0
+  },
+  "errors": [],
+  "event": "CLAIM6_D4_SWEEP_INDEPENDENT_CHECK",
+  "observed_speedup": 1.2352941176470589,
+  "status": "PASS"
+}
