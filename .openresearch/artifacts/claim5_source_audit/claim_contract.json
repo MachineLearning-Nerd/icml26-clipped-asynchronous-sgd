@@ -1,0 +1,8 @@
+{
+  "claim": 5,
+  "route": "exact primary-source comparator audit",
+  "interpretation": "The explicit comparator 'vanilla ASGD' carries across the coordinated CIFAR-10 and Shakespeare clauses.",
+  "pass_condition": "The CIFAR D4 value and both Shakespeare delay values are compared against exact source prose using one fixed comparator.",
+  "falsification_condition": "Any required source-reported value lies outside the imported range.",
+  "ambiguity_policy": "Record MEDIUM confidence because the second clause does not repeat its comparator; a comparator-free reading is BLOCKED rather than verified."
+}

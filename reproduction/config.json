@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "campaign": "arxiv-2606.13287",
-  "mode": "claim3_route3_prior_art_falsification",
-  "seed": 20260735,
+  "mode": "claim5_exact_source_comparator_audit",
+  "seed": 20260736,
   "compute_plan": {
     "estimated_cores": 1,
     "runtime_class": "short one-core symbolic proof audit under five minutes",
@@ -26,6 +26,7 @@
     "expectation_theorems",
     "claim3_route1",
     "claim3_route2",
-    "claim3_route3"
+    "claim3_route3",
+    "claim5_source_audit"
   ]
 }
