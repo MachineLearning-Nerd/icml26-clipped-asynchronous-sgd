@@ -13,11 +13,15 @@ FALSIFIED). The imported Shakespeare speedup range conflicts with the paper's
 Vanilla-ASGD values under its natural comparator (Claim 5 FALSIFIED, MEDIUM).
 Claims 4 and 6 are BLOCKED after four routes because the historical
 checkpoint/raw gradients and exact Figure 4 protocol are not available.
+The candidate was published to the existing Hugging Face Space at revision
+[`373f35e`](https://huggingface.co/spaces/DineshAI/AmgjQp4vrr/commit/373f35e86c0efee453846451e06723fd71c88f95)
+and is awaiting a new live judge verdict.
 
 - [Illustrated technical report](reports/clipping-asgd/report.md)
 - [Tutorial marimo notebook](notebooks/clipped_asgd_reproduction.py)
 - [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/blob/main/notebooks/clipped_asgd_reproduction.py)
 - [Evaluator-visible Space release mirror](hf_space_release/)
+- [Published evaluator Space](https://huggingface.co/spaces/DineshAI/AmgjQp4vrr)
 
 The fixed command for every experiment is:
 
@@ -36,7 +40,9 @@ uv run --frozen python -m reproduction.run
 | [Claim 4 falsification](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-4-mandatory-falsification-protocol-identifiability) | Fourth route after real ResNet-18/CIFAR-10 estimates | `uv run --frozen python -m reproduction.run` | Claim 4 BLOCKED | HF `cpu-upgrade`, 8 CPUs for real routes; local audit |
 | [Claim 6 validation](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-6-independent-three-seed-winner-validation) | Three-seed real CIFAR validation of selected D4/D8 winners | `uv run --frozen python -m reproduction.run` | D4 1.023x, 95% [0.928, 1.121]; D8 censored | HF `cpu-upgrade`, 8 CPUs, 40m43s |
 | [Claim 5 source audit](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-5-exact-source-and-comparator-audit) | Exact comparator and source-value check | `uv run --frozen python -m reproduction.run` | Claim 5 FALSIFIED, MEDIUM | local CPU, one process, 7.69 s |
-| [Cumulative release candidate](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/evaluator-visible-cumulative-release-candidate) | Pin all raw results, regression-test, red-team, publish | `uv run --frozen python -m reproduction.run` | pending release gates | local CPU, one process |
+| [Cumulative release candidate](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/evaluator-visible-cumulative-release-candidate) | Pin all raw results and blind-review the Space overlay | `uv run --frozen python -m reproduction.run` | scientific checks passed; release hash-portability gate failed | local CPU, one process, 22.20 s |
+| [Portable cumulative release](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/portable-cumulative-release-hash-pin) | Replace a mutating Claim 6 verifier with immutable hash pinning | `uv run --frozen python -m reproduction.run` | PASS, 17/17 verifiers | local CPU, one process, 33.51 s |
+| [Final publication regression](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/final-publication-metadata-and-cumulative-regres) | Add formal run metadata and rerun the exact 373-path release | `uv run --frozen python -m reproduction.run` | PASS, 17/17; published and awaiting judge | local CPU, one process, 11.76 s |
 
 ## Original workspace note
 

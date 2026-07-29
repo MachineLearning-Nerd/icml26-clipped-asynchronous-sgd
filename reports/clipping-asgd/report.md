@@ -86,10 +86,17 @@ BLOCKED.
 The previous live score remains 4/12. The conservative forecast is 6–9/12,
 with 9/12 the best-supported possible result. Full-scale historical
 reproduction of Claims 4 and 6 still requires the missing author artifacts.
+The final cumulative regression passed 17/17 verifiers on Git
+`cc1c73b1d0e1a4cfbea3b4660d19a2bbf8fdc084` in 11.761389 seconds. The
+373-path evaluator artifact was published additively to the existing Space at
+revision
+[`373f35e`](https://huggingface.co/spaces/DineshAI/AmgjQp4vrr/commit/373f35e86c0efee453846451e06723fd71c88f95);
+the live score is unchanged until the judge evaluates that revision.
 
 Key experiment branches:
 
 - [Claims 1–2 proof certificate](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claims-1-and-2-constructive-expectation-theorem)
 - [Claim 3 prior-art falsification](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-3-route-3-prior-art-falsification)
 - [Claim 5 source audit](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-5-exact-source-and-comparator-audit)
-- [Cumulative release candidate](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/evaluator-visible-cumulative-release-candidate)
+- [Winning portable cumulative release](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/portable-cumulative-release-hash-pin)
+- [Final publication regression](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/final-publication-metadata-and-cumulative-regres)
