@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "campaign": "arxiv-2606.13287",
-  "mode": "claims1_2_constructive_expectation_theorem_certificate",
-  "seed": 20260732,
+  "mode": "claim3_route1_published_proof_audit",
+  "seed": 20260733,
   "compute_plan": {
     "estimated_cores": 1,
     "runtime_class": "short one-core symbolic proof audit under five minutes",
@@ -23,6 +23,7 @@
     "claim6_d8_sweep",
     "claim6_validation",
     "claim6_falsification",
-    "expectation_theorems"
+    "expectation_theorems",
+    "claim3_route1"
   ]
 }
