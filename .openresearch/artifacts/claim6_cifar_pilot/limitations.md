@@ -4,6 +4,8 @@
   and a 3,200-time-unit cap. It is not the full Figure 4 sweep.
 - Architecture, batch size, normalization, partition code, and evaluation
   cadence are defensible reconstruction choices because the paper omits them.
+  This branch specifically tests the canonical 62k-parameter PyTorch CIFAR
+  tutorial CNN as a sibling of the 879k-parameter federated-CNN route.
 - The direct Algorithm 2 scheduler produces mean oracle times below both
   Figure 4 captions even after a finite-horizon audit. Training therefore
   reports its realized timing and does not claim source-code identity.

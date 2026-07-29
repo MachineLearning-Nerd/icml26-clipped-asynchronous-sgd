@@ -57,22 +57,24 @@ CONFIGS = (
 
 
 class TwoConvCNN(nn.Module):
-    """Common federated CIFAR CNN: two convolutions and two dense layers."""
+    """Canonical PyTorch CIFAR tutorial network with two convolutions."""
 
     def __init__(self) -> None:
         super().__init__()
         self.features = nn.Sequential(
-            nn.Conv2d(3, 32, kernel_size=5),
+            nn.Conv2d(3, 6, kernel_size=5),
             nn.ReLU(),
             nn.MaxPool2d(2),
-            nn.Conv2d(32, 64, kernel_size=5),
+            nn.Conv2d(6, 16, kernel_size=5),
             nn.ReLU(),
             nn.MaxPool2d(2),
         )
         self.classifier = nn.Sequential(
-            nn.Linear(64 * 5 * 5, 512),
+            nn.Linear(16 * 5 * 5, 120),
             nn.ReLU(),
-            nn.Linear(512, 10),
+            nn.Linear(120, 84),
+            nn.ReLU(),
+            nn.Linear(84, 10),
         )
 
     def forward(self, inputs: torch.Tensor) -> torch.Tensor:
@@ -390,7 +392,9 @@ def main() -> int:
             "pilot_seeds": 1,
         },
         "reconstruction_choices_missing_from_paper": {
-            "architecture": "Conv5x5(3,32)-pool-Conv5x5(32,64)-pool-FC512-FC10",
+            "architecture": (
+                "Conv5x5(3,6)-pool-Conv5x5(6,16)-pool-FC120-FC84-FC10"
+            ),
             "batch_size": BATCH_SIZE,
             "preprocessing": "CIFAR channel normalization; no augmentation",
             "evaluation_interval_time_units": EVAL_INTERVAL,

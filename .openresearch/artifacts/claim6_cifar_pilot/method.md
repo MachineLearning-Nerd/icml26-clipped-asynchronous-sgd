@@ -7,9 +7,10 @@ A scheduled gradient is computed from the model snapshot sent at scheduling
 time and applied only at its simulated completion time.
 
 The paper omits the exact CNN, batch size, preprocessing, partition code, and
-evaluation cadence. The pilot uses a common federated two-convolution CNN,
-batch size 64, CIFAR channel normalization without augmentation, and
-evaluation every 100 simulated time units.
+evaluation cadence. This sibling uses the canonical PyTorch CIFAR tutorial
+network: 5x5 convolutions with 6 and 16 channels, followed by dense widths
+120, 84, and 10. It uses batch size 64, CIFAR channel normalization without
+augmentation, and evaluation every 100 simulated time units.
 
 This route deliberately tests only one seed, `D=4`, and three configurations
 through time 3,200. It calibrates feasibility and learning behavior before the

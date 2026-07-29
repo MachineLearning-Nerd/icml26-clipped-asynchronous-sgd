@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "campaign": "arxiv-2606.13287",
-  "mode": "claim6_cifar10_protocol_calibration",
+  "mode": "claim6_cifar10_classic_cnn_calibration",
   "seed": 20260728,
   "compute_plan": {
     "estimated_cores": 6,
