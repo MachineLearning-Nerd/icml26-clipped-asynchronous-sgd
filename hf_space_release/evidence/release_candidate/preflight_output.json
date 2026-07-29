@@ -1,5 +1,6 @@
 {
-  "allowlist_count": 369,
+  "allowlist_count": 373,
+  "authoritative_formal_run": "9388b95f-c7ac-4e84-b7c7-e14649b2a89f",
   "checks": {
     "formal_raw_hashes": {
       "claim3_route3": "38d219af2586f5a2c3949104e9dad2bb111ed5b1b7b8a173e176d435fe13e29d",
@@ -11,10 +12,7 @@
     },
     "secret_scan_finding_count": 0
   },
-  "errors": [
-    "manifest hash mismatch: .openresearch/artifacts/claim6_falsification/verify.py",
-    "manifest hash mismatch: evidence/claim6_falsification/verify.py"
-  ],
+  "errors": [],
   "event": "RELEASE_CANDIDATE_VERIFY",
   "expected_verdicts": {
     "1": "VERIFIED",
@@ -30,8 +28,8 @@
     "judge_result_claimed": false,
     "previous_live_score": "4/12"
   },
-  "fresh_traversal_opened_count": 69,
-  "manifest_hashed_count": 368,
+  "fresh_traversal_opened_count": 71,
+  "manifest_hashed_count": 372,
   "negative_controls": {
     "missing_candidate_page_rejected": true,
     "missing_protected_path_rejected": true,
@@ -39,5 +37,5 @@
   },
   "notebook_check_exit_code": 0,
   "report_figure_count": 5,
-  "status": "FAIL"
+  "status": "PASS"
 }

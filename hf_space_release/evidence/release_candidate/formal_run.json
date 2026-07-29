@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "run_id": "9388b95f-c7ac-4e84-b7c7-e14649b2a89f",
+  "experiment_id": "519e789e-3d8b-4d84-a339-e458f89aaf99",
+  "experiment_branch": "orx/portable-cumulative-release-hash-pin",
+  "git_sha": "cf23e2e84f931be528724d7720df3dec5127bf88",
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "status": "PASS",
+  "verifier_count": 17,
+  "verifier_exit_codes": {
+    "claim4": 0,
+    "claim4_mirror": 0,
+    "claim4_trained": 0,
+    "claim4_tail_audit": 0,
+    "claim4_falsification": 0,
+    "claim6_scheduler": 0,
+    "claim6_scheduler_finite": 0,
+    "claim6_d4_sweep": 0,
+    "claim6_d8_sweep": 0,
+    "claim6_validation": 0,
+    "claim6_falsification": 0,
+    "expectation_theorems": 0,
+    "claim3_route1": 0,
+    "claim3_route2": 0,
+    "claim3_route3": 0,
+    "claim5_source_audit": 0,
+    "release_candidate": 0
+  },
+  "compute": {
+    "estimated_cores": 1,
+    "selected_backend": "local",
+    "selected_flavor": null,
+    "actual_processes": 1,
+    "host_os_cpu_count": 8,
+    "runtime_seconds": 33.508039,
+    "gpu_visible": false,
+    "cost_usd": 0.0
+  },
+  "environment": {
+    "python": "3.12.11",
+    "uv_lock_sha256": "088087f86a36731bb34896bf76bb1a4f4461c23f4a1526f075ff80c25a99c2bb",
+    "marimo": "0.23.14",
+    "torch": "2.7.1",
+    "torchvision": "0.22.1"
+  },
+  "release_gate": {
+    "upload_allowlist_count": 369,
+    "manifest_hashed_count": 368,
+    "protected_paths": 13,
+    "protected_subset": true,
+    "evaluator_reachable_files": 69,
+    "secret_findings": 0,
+    "negative_controls_passed": 3
+  },
+  "score": {
+    "previous_live": "4/12",
+    "conservative_forecast": "6-9/12",
+    "best_supported_possible": "9/12",
+    "judge_result_claimed": false
+  }
+}

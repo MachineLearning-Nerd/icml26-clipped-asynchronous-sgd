@@ -144,6 +144,8 @@
 .openresearch/artifacts/provenance/source_audit.md
 .openresearch/artifacts/release_candidate/EVAL.md
 .openresearch/artifacts/release_candidate/claim_contract.json
+.openresearch/artifacts/release_candidate/commands.md
+.openresearch/artifacts/release_candidate/formal_run.json
 .openresearch/artifacts/release_candidate/limitations.md
 .openresearch/artifacts/release_candidate/method.md
 .openresearch/artifacts/release_candidate/preflight_output.json
@@ -301,6 +303,8 @@ evidence/provenance/source_audit.md
 evidence/pyproject.toml
 evidence/release_candidate/EVAL.md
 evidence/release_candidate/claim_contract.json
+evidence/release_candidate/commands.md
+evidence/release_candidate/formal_run.json
 evidence/release_candidate/limitations.md
 evidence/release_candidate/method.md
 evidence/release_candidate/old_new_subset_check.json

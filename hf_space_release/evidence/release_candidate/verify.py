@@ -144,6 +144,22 @@ def main() -> int:
     ):
         errors.append("protected judged file subset proof failed")
 
+    formal_run = json.loads(
+        (OVERLAY / "evidence/release_candidate/formal_run.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    if (
+        formal_run.get("status") != "PASS"
+        or formal_run.get("verifier_count") != 17
+        or set(formal_run.get("verifier_exit_codes", {}).values()) != {0}
+        or formal_run.get("git_sha")
+        != "cf23e2e84f931be528724d7720df3dec5127bf88"
+        or formal_run.get("fixed_command")
+        != "uv run --frozen python -m reproduction.run"
+    ):
+        errors.append("authoritative cumulative formal run record is invalid")
+
     pass1 = json.loads((ARTIFACT / "red_team_pass1.json").read_text(encoding="utf-8"))
     pass2 = json.loads(
         (OVERLAY / "evidence/release_candidate/red_team_pass2.json").read_text(
@@ -230,6 +246,7 @@ def main() -> int:
         },
         "allowlist_count": len(allowlist),
         "manifest_hashed_count": len(manifest_entries),
+        "authoritative_formal_run": formal_run["run_id"],
         "fresh_traversal_opened_count": len(traversal["opened_files"]),
         "negative_controls": negative_controls,
         "report_figure_count": len(image_paths) if report_directory.is_dir() else None,

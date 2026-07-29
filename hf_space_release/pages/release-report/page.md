@@ -20,6 +20,23 @@ toy verifiers are superseded by exact proof, primary-source, real-data, and
 terminal blocker evidence. Claims 4 and 6 remain BLOCKED for explicitly listed
 source-identification reasons.
 
+## Experiment tree and winning run
+
+The frozen baseline was followed by small route bushes for Claims 4, 6, 3,
+and 5, then the cumulative release branch. The first release run correctly
+failed on a mutating Claim 6 verifier; child branch
+`orx/portable-cumulative-release-hash-pin` replaced it with a hash-pinned
+checker. The winning Git SHA is
+`cf23e2e84f931be528724d7720df3dec5127bf88`; formal run
+`9388b95f-c7ac-4e84-b7c7-e14649b2a89f` passed all 17 verifiers in 33.508039
+seconds.
+
+Relevant Hugging Face `cpu-upgrade` routes used about 7h08m of wall time with
+eight allocated CPUs and no GPU. The backend did not expose billing cost in
+the run records, so cost is reported as unavailable rather than guessed.
+Local formal verification cost was USD 0. See the
+[exact command and compute ledger](evidence/release_candidate/commands.md).
+
 The exact publication action is an additive text-only commit to the existing
 Space `DineshAI/AmgjQp4vrr`; no second Space is created. Existing judged files
 remain present, the historical page remains reachable, and the original

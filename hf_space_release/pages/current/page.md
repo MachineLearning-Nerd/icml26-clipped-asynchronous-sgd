@@ -25,6 +25,17 @@ uv run --frozen python -m reproduction.run
   [configuration](evidence/reproduction/config.json),
   [pyproject](evidence/pyproject.toml), [uv lock](evidence/uv.lock)
 
+## Authoritative cumulative run
+
+Run `9388b95f-c7ac-4e84-b7c7-e14649b2a89f` on winning branch
+`orx/portable-cumulative-release-hash-pin`, Git
+`cf23e2e84f931be528724d7720df3dec5127bf88`, executed the fixed command
+above. All 17 verifiers exited zero in 33.508039 seconds. It used one local CPU
+process (host reported 8 logical CPUs), no GPU, and USD 0 local compute cost.
+
+- [formal run JSON](evidence/release_candidate/formal_run.json)
+- [command and compute ledger](evidence/release_candidate/commands.md)
+
 ## Current result
 
 | Claim | Verdict | Confidence | Current points | Possible points | Core evidence |
