@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "campaign": "arxiv-2606.13287",
-  "mode": "claim3_route1_published_proof_audit",
-  "seed": 20260733,
+  "mode": "claim3_route2_repaired_freedman_derivation",
+  "seed": 20260734,
   "compute_plan": {
     "estimated_cores": 1,
     "runtime_class": "short one-core symbolic proof audit under five minutes",
@@ -24,6 +24,7 @@
     "claim6_validation",
     "claim6_falsification",
     "expectation_theorems",
-    "claim3_route1"
+    "claim3_route1",
+    "claim3_route2"
   ]
 }
