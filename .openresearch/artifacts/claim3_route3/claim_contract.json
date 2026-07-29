@@ -1,0 +1,9 @@
+{
+  "claim": 3,
+  "route": 3,
+  "route_name": "primary-source prior-art falsification",
+  "exact_target": "The imported claim conjoins a first-high-probability-result assertion with the specific theta-dependent rates in Theorems 4.3 and 5.2.",
+  "falsification_condition": "A pre-target primary source must describe an asynchronous stochastic-gradient optimization algorithm and prove a stationarity convergence guarantee for arbitrary success probability 1-delta.",
+  "scope_rule": "The target source's own novelty wording is broad: first time in asynchronous optimization. It does not restrict novelty to an average-gradient event.",
+  "logical_rule": "If the novelty conjunct is false, the compound imported Claim 3 is FALSIFIED even if the rate conjunct remains BLOCKED."
+}
