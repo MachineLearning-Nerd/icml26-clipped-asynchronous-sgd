@@ -1,0 +1,11 @@
+{
+  "claim_number": 6,
+  "source_anchor": "Section 5 Algorithm 2 and Figure 4 caption",
+  "paper_values": {
+    "D=4": 0.337,
+    "D=8": 0.668
+  },
+  "contract": "The reconstructed uniform-resampling, per-worker queue scheduler must reproduce both reported average oracle-call times within absolute tolerance 0.015 over three deterministic long-horizon seeds.",
+  "negative_control": "A homogeneous-style scheduler that only reschedules the completing worker must lie outside tolerance for both delays.",
+  "scope": "Scheduler fidelity only. Passing cannot verify the 1.2x/1.3x training speedups."
+}

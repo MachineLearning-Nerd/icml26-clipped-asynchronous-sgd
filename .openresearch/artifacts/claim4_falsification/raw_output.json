@@ -1,0 +1,53 @@
+{
+  "assumption_identical_protocol_available": false,
+  "candidate_contradiction": {
+    "initialization_theta": 0.07891913452514868,
+    "invalidity_reason": "The paper does not identify the source checkpoint or gradient sampling/fitting protocol, so these real reconstructions do not instantiate the historical source experiment.",
+    "maximum_over_all_admissible_k": {
+      "k": 7,
+      "theta": 0.23450707121079778
+    },
+    "numerically_contradicts_under_reconstruction": true,
+    "reported_theta": 2.71,
+    "trained_bootstrap_95": {
+      "high_95": 0.27874097658977076,
+      "low_95": 0.12039364635613863,
+      "replicates": 400
+    },
+    "trained_theta": 0.2246482950234154,
+    "valid_assumption_identical_counterexample": false
+  },
+  "claim_number": 4,
+  "domain_and_quantifier": "One historical, paper-specific experiment; not universal over all ResNet-18/CIFAR-10 checkpoints or sampling protocols.",
+  "exact_claim": "The empirical estimate for ResNet-18/CIFAR-10 gradient errors in the paper's source experiment is theta=2.71.",
+  "falsification_succeeded": false,
+  "paper_html_sha256": "292ba2ce9a95e41279fe1535ffa23b720f18fb2139c3e26324138c0d4a0304ff",
+  "positive_falsification_control": {
+    "deliberately_false_reported_theta": 1,
+    "falsified_as_intended": true,
+    "fully_specified_observed_theta": 2.8117797804959914,
+    "tolerance": 0.18
+  },
+  "reason": "Falsification machinery detects a deliberately false fully specified control, but no counterexample can be tied to the authors' unidentified source protocol. Four distinct routes are complete; missing source data/code is the concrete blocker.",
+  "required_protocol_identified": {
+    "author_code_commit": false,
+    "batch_size_and_sample_count": false,
+    "checkpoint_identifier_or_weights": false,
+    "optimizer_and_training_step": false,
+    "preprocessing": false,
+    "reference_gradient_construction": false,
+    "source_raw_gradient_norms": false,
+    "tail_count_k": false
+  },
+  "route": "mandatory fourth falsification route",
+  "runtime_seconds": 0.001687,
+  "schema_version": 1,
+  "true_value_control": {
+    "fully_specified_observed_theta": 2.8117797804959914,
+    "not_falsified_as_intended": true,
+    "reported_theta": 2.71,
+    "tolerance": 0.18
+  },
+  "unblocker": "Author checkpoint, raw gradient-error norms, exact batch/reference construction, and estimator n/k (or an equivalent source artifact).",
+  "verdict": "BLOCKED"
+}
