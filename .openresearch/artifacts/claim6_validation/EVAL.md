@@ -1,10 +1,10 @@
 # Claim 6 current validation
 
-This is the current executable verifier for Claim 6. It regenerates 12 real
-CIFAR-10 trajectories from four locked selection-stage winners and three
-unseen deterministic seeds, writes raw JSON, and invokes a separately
-implemented checker. It exits nonzero on computation, contract, aggregation,
-control, or verdict failure.
+This accepted validation-stage evidence is hash-pinned to run
+`05a78a25-3032-47d1-8862-653c211b3c9b`. The current Claim 6 verifier is the
+descendant falsification audit. This page remains the complete validation
+record and its checker exits nonzero on hash, contract, aggregation, control,
+or verdict failure.
 
 The run uses the fixed command:
 
@@ -12,6 +12,8 @@ The run uses the fixed command:
 uv run --frozen python -m reproduction.run
 ```
 
-The machine-readable result assigns exactly one terminal verdict:
-`VERIFIED` if both preregistered caption contracts pass, otherwise `BLOCKED`.
-It never treats a reconstruction mismatch as falsification.
+The D=4 mean speedup was 1.022727x with combined cadence-aware 95% interval
+`[0.928338, 1.120652]`. At D=8, one clipped run was censored at the paper's
+12,000 cap. The recorded verdict is `BLOCKED`; the independent checker passed.
+Raw SHA-256:
+`6bc2a8fe3148f83d72869d7f8fc50ffe0e303cde359b81d200edd1c9804aa539`.

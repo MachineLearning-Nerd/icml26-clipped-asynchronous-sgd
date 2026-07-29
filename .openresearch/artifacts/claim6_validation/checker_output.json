@@ -1,0 +1,24 @@
+{
+  "errors": [],
+  "event": "CLAIM6_VALIDATION_INDEPENDENT_CHECK",
+  "expected_verdict": "BLOCKED",
+  "raw_sha256": "6bc2a8fe3148f83d72869d7f8fc50ffe0e303cde359b81d200edd1c9804aa539",
+  "recomputed": {
+    "4": {
+      "all_reached": true,
+      "combined_interval": [
+        0.9283383345836459,
+        1.1206521739130435
+      ],
+      "speedup": 1.0227272727272727,
+      "supports": false
+    },
+    "8": {
+      "all_reached": false,
+      "combined_interval": null,
+      "speedup": null,
+      "supports": false
+    }
+  },
+  "status": "PASS"
+}

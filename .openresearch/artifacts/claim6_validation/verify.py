@@ -1,9 +1,9 @@
-"""Generate and independently check Claim 6 validation evidence."""
+"""Hash-pin and independently check accepted Claim 6 validation evidence."""
 
 from __future__ import annotations
 
+import hashlib
 import json
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -11,35 +11,28 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 CHECKER = Path(__file__).with_name("independent_check.py")
+RAW = Path(__file__).with_name("raw_output.json")
+EXPECTED_RAW_SHA256 = (
+    "6bc2a8fe3148f83d72869d7f8fc50ffe0e303cde359b81d200edd1c9804aa539"
+)
 
 
 def main() -> int:
-    environment = os.environ.copy()
-    environment["OMP_NUM_THREADS"] = "1"
-    environment["MKL_NUM_THREADS"] = "1"
-    experiment = subprocess.run(
-        [sys.executable, "-m", "reproduction.claims.claim6_validation"],
-        cwd=ROOT,
-        env=environment,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
-    print(experiment.stdout, end="")
-    if experiment.stderr:
-        print(experiment.stderr, file=sys.stderr, end="")
-    if experiment.returncode:
+    observed_hash = hashlib.sha256(RAW.read_bytes()).hexdigest()
+    if observed_hash != EXPECTED_RAW_SHA256:
         print(
             json.dumps(
                 {
                     "event": "CLAIM6_VALIDATION_VERIFY",
-                    "stage": "scientific_run",
                     "status": "FAIL",
+                    "error": "raw hash mismatch",
+                    "expected": EXPECTED_RAW_SHA256,
+                    "observed": observed_hash,
                 },
                 sort_keys=True,
             )
         )
-        return experiment.returncode
+        return 1
     checker = subprocess.run(
         [sys.executable, str(CHECKER)],
         cwd=ROOT,
@@ -55,6 +48,7 @@ def main() -> int:
             {
                 "event": "CLAIM6_VALIDATION_VERIFY",
                 "status": "PASS" if checker.returncode == 0 else "FAIL",
+                "raw_sha256": observed_hash,
             },
             sort_keys=True,
         )

@@ -1,0 +1,218 @@
+{
+  "candidate": {
+    "contradiction_established": true,
+    "name": "real CIFAR-10 three-seed reconstruction",
+    "protocol_fields": [
+      {
+        "candidate_evidence": "CIFAR-10 train/test archives",
+        "field": "dataset",
+        "material": true,
+        "paper_requirement": "CIFAR-10",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "16 simulated workers, 16 active jobs",
+        "field": "workers_and_concurrency",
+        "material": true,
+        "paper_requirement": "16 workers, full concurrency",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "exact 8+8 service-time vector",
+        "field": "worker_service_times",
+        "material": true,
+        "paper_requirement": "eight at 1 and eight at D",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "D=4 and D=8",
+        "field": "delay_factors",
+        "material": true,
+        "paper_requirement": "D in {4,8}",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "class-wise Dirichlet alpha=0.5",
+        "field": "label_skew",
+        "material": true,
+        "paper_requirement": "Dirichlet alpha=0.5",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "exact target and caps",
+        "field": "target_and_caps",
+        "material": true,
+        "paper_requirement": "70%; caps 8000 and 12000",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "complete selection grids",
+        "field": "hyperparameter_domain",
+        "material": true,
+        "paper_requirement": "LR 2^-9..2^-1; c in {0.5,1,2,4}",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "three independent validation seeds",
+        "field": "seed_count",
+        "material": true,
+        "paper_requirement": "three seeds",
+        "status": "matched"
+      },
+      {
+        "candidate_evidence": "declared 878,538-parameter two-convolution CNN",
+        "field": "exact_two_layer_cnn",
+        "material": true,
+        "paper_requirement": "paper's unspecified two-layer CNN",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "batch 64, normalization, no augmentation",
+        "field": "batch_and_preprocessing",
+        "material": true,
+        "paper_requirement": "not reported",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "declared class-wise allocation",
+        "field": "partition_sampler",
+        "material": true,
+        "paper_requirement": "not reported beyond Dirichlet alpha",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "20260730..20260732",
+        "field": "exact_seed_values",
+        "material": true,
+        "paper_requirement": "not reported",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "declared deterministic heap and tie order",
+        "field": "event_queue_and_ties",
+        "material": true,
+        "paper_requirement": "not reported",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "200 simulated time units",
+        "field": "evaluation_cadence",
+        "material": true,
+        "paper_requirement": "not reported",
+        "status": "unresolved"
+      },
+      {
+        "candidate_evidence": "paired first-hit bootstrap with cadence interval",
+        "field": "curve_aggregation",
+        "material": true,
+        "paper_requirement": "mean of three seeds with 2-sigma bars",
+        "status": "mismatched"
+      },
+      {
+        "candidate_evidence": "linked repository has no commits or refs",
+        "field": "author_implementation",
+        "material": true,
+        "paper_requirement": "linked implementation",
+        "status": "unresolved"
+      }
+    ],
+    "same_historical_realization": false,
+    "universally_quantified_claim": false
+  },
+  "candidate_classification": "BLOCKED",
+  "candidate_observation": {
+    "D4_combined_95_interval": [
+      0.9283383345836459,
+      1.1206521739130435
+    ],
+    "D4_speedup": 1.0227272727272727,
+    "D8_all_targets_reached": false,
+    "D8_censored_seeds": {
+      "clipped": [
+        20260731
+      ],
+      "vanilla": []
+    }
+  },
+  "candidate_validation_sha256": "6bc2a8fe3148f83d72869d7f8fc50ffe0e303cde359b81d200edd1c9804aa539",
+  "claim_number": 6,
+  "claim_quantifier": "A descriptive claim about the paper's historical three-seed realization, not a universal guarantee over future seeds or unspecified reconstructions.",
+  "compute": {
+    "actual_processes": 1,
+    "estimated_cores": 1,
+    "expected_runtime": "under five minutes",
+    "gpu_allowed": false,
+    "selected_backend": "local"
+  },
+  "control_pass": true,
+  "controls": {
+    "assumption_violation_negative": {
+      "candidate": {
+        "contradiction_established": true,
+        "name": "assumption-violating mismatch control",
+        "protocol_fields": [
+          {
+            "field": "dataset",
+            "material": true,
+            "status": "mismatched"
+          }
+        ],
+        "same_historical_realization": false,
+        "universally_quantified_claim": true
+      },
+      "classification": "BLOCKED"
+    },
+    "historical_positive": {
+      "candidate": {
+        "contradiction_established": true,
+        "name": "original-raw-data contradiction control",
+        "protocol_fields": [
+          {
+            "field": "original_raw_and_protocol",
+            "material": true,
+            "status": "matched"
+          }
+        ],
+        "same_historical_realization": true,
+        "universally_quantified_claim": false
+      },
+      "classification": "FALSIFIED"
+    },
+    "universal_positive": {
+      "candidate": {
+        "contradiction_established": true,
+        "name": "fully specified universal counterexample control",
+        "protocol_fields": [
+          {
+            "field": "fully_specified_domain",
+            "material": true,
+            "status": "matched"
+          }
+        ],
+        "same_historical_realization": false,
+        "universally_quantified_claim": true
+      },
+      "classification": "FALSIFIED"
+    }
+  },
+  "exact_claim": "Figure 4 reports that on label-skew CIFAR-10 Clipped ASGD improved over vanilla ASGD by 1.2x at D=4 and 1.3x at D=8.",
+  "falsification_succeeded": false,
+  "reason": "The reconstruction raises a substantive replication discrepancy but does not use the original realized seeds/raw curves, is not identical on every material protocol field, and tests a historical descriptive claim rather than a universal claim.",
+  "route": "mandatory fourth route dedicated to valid falsification",
+  "runtime_seconds": 0.00058,
+  "schema_version": 1,
+  "source": {
+    "D4_figure_sha256": "122860beeff322b8f7fb1d1800220ee4eeb0a148404279f7de583c30abaa6551",
+    "D8_figure_sha256": "a3541e5245c696cf19c775454357eef24238528ea1fb386919bd632438fee26f",
+    "author_repo_state": "zero commits and no refs at campaign audit",
+    "latex_archive_sha256": "625fcd8270456342db8754427250eaba862686576b27bc5dbec84d9af5aa4915",
+    "main_tex_lines": "758-769, 851-910"
+  },
+  "status": "PASS",
+  "unblockers": [
+    "author source implementing the exact Figure 4 protocol",
+    "original per-seed raw curves and seed identifiers",
+    "the omitted architecture, data, scheduler, cadence, and aggregation details"
+  ],
+  "verdict": "BLOCKED"
+}
