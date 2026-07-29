@@ -1,5 +1,5 @@
 {
-  "allowlist_count": 193,
+  "allowlist_count": 369,
   "checks": {
     "formal_raw_hashes": {
       "claim3_route3": "38d219af2586f5a2c3949104e9dad2bb111ed5b1b7b8a173e176d435fe13e29d",
@@ -12,8 +12,8 @@
     "secret_scan_finding_count": 0
   },
   "errors": [
-    "manifest hash mismatch: pages/current/page.md",
-    "manifest hash mismatch: pages/release-report/page.md"
+    "manifest hash mismatch: .openresearch/artifacts/claim6_falsification/verify.py",
+    "manifest hash mismatch: evidence/claim6_falsification/verify.py"
   ],
   "event": "RELEASE_CANDIDATE_VERIFY",
   "expected_verdicts": {
@@ -31,7 +31,7 @@
     "previous_live_score": "4/12"
   },
   "fresh_traversal_opened_count": 69,
-  "manifest_hashed_count": 192,
+  "manifest_hashed_count": 368,
   "negative_controls": {
     "missing_candidate_page_rejected": true,
     "missing_protected_path_rejected": true,
