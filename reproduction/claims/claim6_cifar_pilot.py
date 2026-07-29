@@ -35,6 +35,7 @@ EVAL_INTERVAL = 100.0
 TARGET_ACCURACY = 0.70
 PROCESS_WORKERS = 3
 THREADS_PER_PROCESS = 2
+_THREADS_CONFIGURED = False
 
 TRAIN_IMAGES: np.ndarray | None = None
 TRAIN_LABELS: np.ndarray | None = None
@@ -81,11 +82,14 @@ class TwoConvCNN(nn.Module):
 
 
 def set_determinism(seed: int) -> None:
+    global _THREADS_CONFIGURED
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.set_num_threads(THREADS_PER_PROCESS)
-    torch.set_num_interop_threads(1)
+    if not _THREADS_CONFIGURED:
+        torch.set_num_threads(THREADS_PER_PROCESS)
+        torch.set_num_interop_threads(1)
+        _THREADS_CONFIGURED = True
     torch.use_deterministic_algorithms(True)
 
 
