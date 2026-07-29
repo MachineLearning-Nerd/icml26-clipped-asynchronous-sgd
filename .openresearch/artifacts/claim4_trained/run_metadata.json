@@ -1,0 +1,19 @@
+{
+  "run_id": "267469d5-fea2-4a78-abb6-a7bea32e0fef",
+  "source_git_sha": "f80b2e808335a0ff8cfdb6ef988b7ff630e978a7",
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "image": "ghcr.io/astral-sh/uv:0.11.29-python3.12-trixie-slim",
+  "estimated_cores": 8,
+  "actual_cgroup_cpu_max": "800000 100000",
+  "actual_cpu_quota_cores": 8,
+  "gpu_visible": false,
+  "experiment_runtime_seconds": 881.02709,
+  "evaluator_runtime_seconds": 894.785538,
+  "source_raw_output_sha256": "04078f3acc73d732b1a328ef52665f6bc96b31d6dde8cd702664a8544cf7ed6c",
+  "committed_semantic_json_sha256": "bea73c45f230367262ade1b9a425ff431c93294634e57374a8ac9adb852a7ce8",
+  "serialization_note": "The committed JSON was reconstructed losslessly from the log envelope and has identical parsed values; JavaScript normalized 0.0 to 0, so its byte hash differs from the ephemeral Python serialization.",
+  "negative_control_sha256": "9078fe407a2d8189f69627b4035a047b684a3faab36c9d95387eeca36cbb74ca",
+  "source_run_status": "done"
+}
