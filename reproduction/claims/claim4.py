@@ -31,6 +31,10 @@ ERROR_BATCHES = 24
 BOOTSTRAP_REPLICATES = 400
 PRIMARY_TAIL_FRACTION = 1 / 3
 REPORTED_THETA = 2.71
+CIFAR_HF_MIRROR = (
+    "https://huggingface.co/datasets/VerisimilitudeX/cifar10/resolve/main/"
+    "cifar-10-python.tar.gz"
+)
 
 
 def set_determinism(seed: int) -> None:
@@ -44,6 +48,14 @@ def set_determinism(seed: int) -> None:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def md5(path: Path) -> str:
+    digest = hashlib.md5(usedforsecurity=False)
     with path.open("rb") as handle:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
@@ -195,9 +207,11 @@ def main() -> int:
             ),
         ]
     )
+    datasets.CIFAR10.url = CIFAR_HF_MIRROR
     dataset = datasets.CIFAR10(
         root=data_root, train=True, download=True, transform=transform
     )
+    archive_path = data_root / datasets.CIFAR10.filename
     generator = torch.Generator().manual_seed(SEED)
     permutation = torch.randperm(len(dataset), generator=generator).tolist()
     reference_count = REFERENCE_BATCHES * BATCH_SIZE
@@ -259,6 +273,8 @@ def main() -> int:
             "error_examples": error_count,
             "batch_size": BATCH_SIZE,
             "downloaded_archive_md5_documented_by_torchvision": "c58f30108f718f92721af3b95e74349a",
+            "downloaded_archive_md5_observed": md5(archive_path),
+            "transport_mirror": CIFAR_HF_MIRROR,
         },
         "model": {
             "name": "torchvision ResNet-18 with CIFAR 3x3 stem and no max-pool",
