@@ -1,0 +1,18 @@
+{
+  "actual_cpu_allocation": {
+    "cgroup_cpu_max": "800000 100000",
+    "effective_cores": 8,
+    "os_cpu_count": 64
+  },
+  "backend": "hf",
+  "estimated_cores": 8,
+  "experiment_id": "3129fdc0-44c7-4a78-ba7b-5811a90a0a0d",
+  "flavor": "cpu-upgrade",
+  "formal_runtime_seconds": 9043.111193,
+  "git_sha": "2f227d9216db465a4ed05cfb5d2bbe325a68ae9a",
+  "gpu_used": false,
+  "grid_runtime_seconds": 9029.470462,
+  "raw_extraction": "The raw JSON was parsed mechanically from the first line of the claim6_d4_sweep verifier stdout recorded by orx logs.",
+  "raw_sha256": "f9d36093629b4966bec95323d3df6750ba78af2d5ffd16a0c7330d9a6a16082d",
+  "run_id": "01c2ea2c-e315-4b8b-aa1d-fa97b0c3c884"
+}

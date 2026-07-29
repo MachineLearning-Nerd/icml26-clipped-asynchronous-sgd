@@ -1,0 +1,43 @@
+{
+  "allowlist_count": 193,
+  "checks": {
+    "formal_raw_hashes": {
+      "claim3_route3": "38d219af2586f5a2c3949104e9dad2bb111ed5b1b7b8a173e176d435fe13e29d",
+      "claim4_falsification": "aa2440e9bc8aaeae60f41660cda601a4d6b56392a46183d5755f28b79a015c4e",
+      "claim5_source_audit": "e2999b9b5c407484f4af0777a5e4889ca2f9e07abc2d46048d883020959ce82c",
+      "claim6_falsification": "e685e92c1a1d5889bf8090511d435ff7cadebe39044f9b0def517dc9d8737ff6",
+      "claim6_validation": "6bc2a8fe3148f83d72869d7f8fc50ffe0e303cde359b81d200edd1c9804aa539",
+      "expectation_theorems": "32562b2bf3d348dc31de2d685712b7e86b371aa6abaa33c62006fc8e56f38906"
+    },
+    "secret_scan_finding_count": 0
+  },
+  "errors": [
+    "manifest hash mismatch: pages/current/page.md",
+    "manifest hash mismatch: pages/release-report/page.md"
+  ],
+  "event": "RELEASE_CANDIDATE_VERIFY",
+  "expected_verdicts": {
+    "1": "VERIFIED",
+    "2": "VERIFIED",
+    "3": "FALSIFIED",
+    "4": "BLOCKED",
+    "5": "FALSIFIED",
+    "6": "BLOCKED"
+  },
+  "forecast": {
+    "best_supported_possible": "9/12",
+    "conservative_range": "6-9/12",
+    "judge_result_claimed": false,
+    "previous_live_score": "4/12"
+  },
+  "fresh_traversal_opened_count": 69,
+  "manifest_hashed_count": 192,
+  "negative_controls": {
+    "missing_candidate_page_rejected": true,
+    "missing_protected_path_rejected": true,
+    "modified_raw_hash_rejected": true
+  },
+  "notebook_check_exit_code": 0,
+  "report_figure_count": 5,
+  "status": "FAIL"
+}

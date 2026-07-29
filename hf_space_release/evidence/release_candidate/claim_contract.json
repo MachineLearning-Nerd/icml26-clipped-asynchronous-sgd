@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "claim": "The candidate Space exposes every terminal claim verdict and its reproducible evidence from the canonical evaluator entrypoint while preserving the judged file set.",
+  "expected_verdicts": {
+    "1": "VERIFIED",
+    "2": "VERIFIED",
+    "3": "FALSIFIED",
+    "4": "BLOCKED",
+    "5": "FALSIFIED",
+    "6": "BLOCKED"
+  },
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "negative_controls": [
+    "missing candidate page must fail",
+    "modified formal raw evidence hash must fail",
+    "broken evidence link must fail",
+    "missing protected judged path must fail"
+  ]
+}

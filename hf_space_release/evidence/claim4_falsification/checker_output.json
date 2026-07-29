@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "event": "CLAIM4_FALSIFICATION_INDEPENDENT_CHECK",
+  "falsification_succeeded": false,
+  "identified_fields": 0,
+  "positive_control_pass": true,
+  "required_fields": 8,
+  "status": "PASS",
+  "true_value_control_pass": true
+}

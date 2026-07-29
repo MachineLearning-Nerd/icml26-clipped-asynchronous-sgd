@@ -1,0 +1,13 @@
+{
+  "run_id": "83ef36a7-7319-481e-9080-6bf24613f618",
+  "source_git_sha": "6f359d39f14e1ea9acc51f773857048d56ee7e74",
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "backend": "local",
+  "estimated_cores": 1,
+  "implementation": "single-threaded Python discrete-event simulation",
+  "actual_host_cpu_count_visible": 8,
+  "gpu_visible": false,
+  "verifier_runtime_seconds": 1.081917,
+  "cumulative_evaluator_runtime_seconds": 1.575963,
+  "source_run_status": "failed: scientific contract exited 1"
+}

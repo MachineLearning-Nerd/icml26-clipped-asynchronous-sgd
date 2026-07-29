@@ -1,0 +1,11 @@
+{
+  "claim_number": 6,
+  "exact_claim": "On label-skew CIFAR-10, Clipped ASGD shows a 1.2x improvement over vanilla ASGD at D=4 and a 1.3x improvement at D=8 (Figure 4).",
+  "selection": "D=4 and D=8 winners were selected using seed 20260729 over the complete paper learning-rate and clipping-radius grids.",
+  "validation": "Evaluate the four locked winners on unseen seeds 20260730, 20260731, and 20260732, without reselection.",
+  "uncertainty": "Use all 3^3 paired seed bootstrap resamples and include the adverse endpoints of the 200-time-unit observation cadence.",
+  "verified_rule": "All runs reach 70%; for each delay the combined 95% interval has lower endpoint >1 and contains the paper caption value.",
+  "blocked_rule": "If the verified rule is not met, return BLOCKED, not FALSIFIED, because material author protocol details are unavailable.",
+  "negative_control": "Every untrained initialization must remain below 70% test accuracy.",
+  "non_circularity": "Seeds and winner settings are locked before validation; caps are copied from the paper and are not derived from observed outcomes."
+}

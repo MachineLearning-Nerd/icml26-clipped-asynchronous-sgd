@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "retrieval_date": "2026-07-28",
+  "paper_url": "https://ar5iv.labs.arxiv.org/html/2606.13287",
+  "paper_user_agent": "OpenResearch-Reproduction/1.0 (paper audit; contact via GitHub repository)",
+  "paper_html_sha256": "292ba2ce9a95e41279fe1535ffa23b720f18fb2139c3e26324138c0d4a0304ff",
+  "paper_html_bytes": 601926,
+  "paper_version": "arXiv:2606.13287v1",
+  "validated_baseline_sha": "c83f1106db497ba1618fa656bd564e48b41f4eac",
+  "verdict_dataset": "ICML-2026-agent-repro/verdicts",
+  "verdict_dataset_sha": "1011185ba75e55480455dd44042ae65432f65cde",
+  "verdict_json_sha256": "470902e334497b1f4e42c9cd8b06ce939a984567f2aa8446b9aa4fe5cfe584aa",
+  "verdict_filter": "space_id == \"DineshAI/AmgjQp4vrr\"",
+  "judged_space": "DineshAI/AmgjQp4vrr",
+  "judged_space_revision": "471748694e91b08b071d3d13c30d84b3091b5971",
+  "author_code_url": "https://github.com/samericks/clipped-asgd",
+  "author_code_audit": "Repository existed but had zero commits and zero refs on 2026-07-28."
+}
+

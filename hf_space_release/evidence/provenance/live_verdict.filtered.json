@@ -1,0 +1,12 @@
+{
+  "space_id": "DineshAI/AmgjQp4vrr",
+  "orid": "AmgjQp4vrr",
+  "paper_title": "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers",
+  "sha": "471748694e91b08b071d3d13c30d84b3091b5971",
+  "judged_at": "2026-07-28T15:47:47+00:00",
+  "model": "zai-org/GLM-5.2",
+  "score": "4/12",
+  "quality": "low",
+  "overall": "Only synthetic 8-dimensional quadratic evidence was evaluator-visible; no CIFAR-10, Shakespeare, ResNet-18 gradient-noise, or proof-level oracle-complexity evidence was present."
+}
+

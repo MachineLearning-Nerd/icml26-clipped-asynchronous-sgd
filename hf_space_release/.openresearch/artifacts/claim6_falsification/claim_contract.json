@@ -1,0 +1,10 @@
+{
+  "claim_number": 6,
+  "route": "mandatory fourth route dedicated to valid falsification",
+  "exact_claim": "Figure 4 reports 1.2x and 1.3x improvements for the paper's historical three-seed label-skew CIFAR-10 experiment at D=4 and D=8.",
+  "quantifier": "Descriptive historical observation, not a universal statement over future seeds or unspecified implementations.",
+  "valid_falsification_rule": "A contradiction must use the original historical realization or target a universal claim, and every material protocol field must be matched.",
+  "negative_control": "A contradictory candidate with one mismatched assumption must remain BLOCKED.",
+  "positive_controls": "A fully matched universal counterexample and a fully matched contradiction from original historical raw data must both classify FALSIFIED.",
+  "terminal_rule": "If the real candidate is ineligible, return BLOCKED and list concrete unblockers; never convert replication divergence into FALSIFIED."
+}

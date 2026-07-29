@@ -1,0 +1,17 @@
+{
+  "actual_allocation": {
+    "cgroup_cpu_max": "800000 100000",
+    "cpu_cores": 8,
+    "gpu_visible": false
+  },
+  "backend": "hf",
+  "estimated_cores": 8,
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "flavor": "cpu-upgrade",
+  "git_sha": "9c681d4995f5200a71fccac09d220b65eefa07c0",
+  "grid_runtime_seconds": 8330.751391,
+  "raw_output_sha256": "3eca3f394b17488f325ac57368b9abb11c50b9e62c716d9b9d6fe4485a83ddf9",
+  "run_id": "f745ef3e-873c-4da4-aa4f-77db0602f75f",
+  "run_runtime_seconds": 8341.755469,
+  "seed": 20260729
+}

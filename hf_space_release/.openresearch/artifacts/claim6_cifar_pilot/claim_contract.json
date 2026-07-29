@@ -1,0 +1,13 @@
+{
+  "claim_number": 6,
+  "route": "real CIFAR-10 protocol calibration pilot",
+  "contract": "Run real CIFAR-10 with 16 class-wise Dirichlet(alpha=0.5) clients through the exact queued uniform-resampling path for one D=4 seed. Exercise vanilla and clipped gradients, record accuracy curves and first-hit times, and reject an untrained-model target control.",
+  "accepted_scope": "Calibration only: one seed, selected hyperparameters, 3,200 rather than 8,000 time units.",
+  "required_controls": [
+    "all 50,000 examples assigned exactly once",
+    "untrained model below 70% target",
+    "clipped paths actually clip updates",
+    "maximum staleness exceeds concurrency"
+  ],
+  "terminal_claim_verdict": "BLOCKED"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "claim_number": 4,
+  "paper_anchor": "Definition 3.1 and Figure 1",
+  "exact_paper_statement": "Histograms of gradient errors in training of a ResNet-18 model on CIFAR-10; the empirical estimate of the tail parameter is theta = 2.71.",
+  "reported_value": 2.71,
+  "estimator": "OLS slope of log Y_(n-i+1,n) against log log(n/i) for the k largest observations, following Vladimirova et al. (2020)",
+  "verification_rule": "VERIFIED requires an assumption-identical reconstruction with independently recomputed theta and uncertainty that supports 2.71. FALSIFIED requires an assumption-identical counterexample whose uncertainty excludes 2.71. Missing protocol details force BLOCKED.",
+  "pilot_scope": "Real CIFAR-10 and ResNet-18, but initialization checkpoint and preregistered reconstruction choices because the paper omits essential protocol details.",
+  "allowed_verdicts": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

@@ -1,0 +1,18 @@
+{
+  "actual_cpu": {
+    "affinity_cpu_count": 64,
+    "cgroup_cpu_max": "800000 100000",
+    "cgroup_cpuset_effective": "0-63"
+  },
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "git_sha": "95f0344e7f61c20d40ac181a4274e56f900ba39c",
+  "gpu_visible": false,
+  "job_status": "failed",
+  "job_status_reason": "HF backend timeout after the complete verifier payload was emitted",
+  "run_id": "512fbeef-0db3-44ec-81e8-7fcba10ba53e",
+  "runner_runtime_seconds": 2061.783249,
+  "runner_status_in_log": "PASS",
+  "seed": 20260728,
+  "verifier_runtime_seconds": 2048.09019
+}

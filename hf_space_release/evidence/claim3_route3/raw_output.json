@@ -1,0 +1,137 @@
+{
+  "amplification_certificate": {
+    "checks": [
+      {
+        "delta": 0.2,
+        "failure_upper_bound": 0.125,
+        "repetitions": 3
+      },
+      {
+        "delta": 0.05,
+        "failure_upper_bound": 0.03125,
+        "repetitions": 5
+      },
+      {
+        "delta": 0.01,
+        "failure_upper_bound": 0.0078125,
+        "repetitions": 7
+      },
+      {
+        "delta": 0.000001,
+        "failure_upper_bound": 9.5367431640625E-7,
+        "repetitions": 20
+      }
+    ],
+    "failure_probability": "(1/2)^k <= delta",
+    "premise": "each independent run succeeds with probability at least 1/2",
+    "repetitions": "k=ceil(log2(1/delta))"
+  },
+  "audit_status": "PASS",
+  "claim": 3,
+  "claim_verdict": "FALSIFIED",
+  "compute": {
+    "actual_core_requirement": 1,
+    "estimated_cores": 1,
+    "expected_runtime": "under five minutes",
+    "gpu_allowed": false,
+    "selected_backend": "local"
+  },
+  "confidence": "HIGH",
+  "controls": {
+    "asynchronous_expectation_only_result": {
+      "arbitrary_delta_guarantee": false,
+      "classification": "NOT_A_NOVELTY_COUNTEREXAMPLE"
+    },
+    "asynchronous_runtime_only_high_probability_result": {
+      "classification": "NOT_A_NOVELTY_COUNTEREXAMPLE",
+      "optimization_convergence_event": false
+    },
+    "later_asynchronous_high_probability_result": {
+      "classification": "NOT_A_NOVELTY_COUNTEREXAMPLE",
+      "predates_target": false
+    },
+    "serial_high_probability_sgd": {
+      "asynchronous": false,
+      "classification": "NOT_A_NOVELTY_COUNTEREXAMPLE"
+    }
+  },
+  "limitations": [
+    "The prior result does not contradict the precise average-gradient rate of Theorems 4.3/5.2; routes 1 and 2 leave that subclaim blocked.",
+    "The FALSIFIED verdict applies to the imported compound claim because its broad first-result conjunct is demonstrably false."
+  ],
+  "logical_contract": {
+    "classification_rule": "a conjunction is false when any material conjunct is false",
+    "imported_claim_is_conjunction": [
+      {
+        "id": "novelty",
+        "statement": "the paper gives the first high-probability convergence guarantee in asynchronous SGD/optimization"
+      },
+      {
+        "id": "specific_rate",
+        "statement": "Theorems 4.3 and 5.2 have the displayed theta-governed polylogarithmic delta dependence"
+      }
+    ]
+  },
+  "prior_result": {
+    "anchors": {
+      "algorithm": "paper_main.tex:265-290",
+      "arbitrary_delta_amplification": "paper_main.tex:317-321",
+      "async_sgd_description": "paper_main.tex:99-116",
+      "theorem": "paper_main.tex:293-311"
+    },
+    "arxiv_id": "2106.11879",
+    "arxiv_submission_date": "2021-06-22",
+    "authors": [
+      "Alon Cohen",
+      "Amit Daniely",
+      "Yoel Drori",
+      "Tomer Koren",
+      "Mariano Schain"
+    ],
+    "explicit_user_agent_used": true,
+    "paper_main_tex_sha256": "6e6b6e98c4ef8a9829fc87370a1700bbcb01bbb67bcdcdad3d96e8ca53ac97f8",
+    "pdf_sha256": "bcfc13492b4e6aa73f04e9d55bdd5a14b028c0e0bef79b8e74142300e69b9798",
+    "predates_target": true,
+    "primary_urls": [
+      "https://arxiv.org/abs/2106.11879",
+      "https://proceedings.neurips.cc/paper/2021/hash/4b85256c4881edb6c0776df5d81f6236-Abstract.html"
+    ],
+    "publication": "NeurIPS 2021",
+    "retrieval_date": "2026-07-29",
+    "scope_audit": {
+      "algorithm_name": "Picky SGD",
+      "amplification_cost": "O(log(1/delta)) independent restarts",
+      "arbitrary_success_probability": "1-delta",
+      "asynchronous_delayed_updates": true,
+      "base_success_probability": 0.5,
+      "delay_model": "arbitrary delays independent of gradient noise",
+      "event": "some iterate has gradient norm at most epsilon",
+      "same_average_gradient_event_as_target": false,
+      "smooth_nonconvex_objective": true,
+      "stationarity_convergence_guarantee": true,
+      "stochastic_gradient_algorithm": true
+    },
+    "source_archive_sha256": "95cb673ff942137d6822dc250ec94f82693fdab423d981360cc4578f960d8205",
+    "title": "Asynchronous Stochastic Optimization Robust to Arbitrary Delays"
+  },
+  "route": "primary-source prior-art falsification",
+  "runtime_seconds": 0.000015,
+  "schema_version": 1,
+  "scope_reasoning": {
+    "algorithm_modification_is_in_scope": "Picky SGD conditionally skips stale gradients; the target method likewise modifies ASGD by clipping. Both are named asynchronous stochastic-gradient algorithms.",
+    "different_stationarity_event": "The prior result controls the best iterate, not the target's average norm. This prevents it from refuting the specific rate theorem, but does not rescue the unrestricted first-result phrase.",
+    "novelty_contradiction": "The target's source says first in asynchronous optimization, without restricting the event to an average gradient norm. The 2021 result is an asynchronous stochastic-gradient method with an arbitrary-1-delta stationarity guarantee."
+  },
+  "subclaim_verdicts": {
+    "compound_claim_3": "FALSIFIED",
+    "novelty": "FALSIFIED",
+    "specific_theta_rate": "BLOCKED"
+  },
+  "target_source": {
+    "broad_novelty_anchor": "main.tex:601-603",
+    "latex_archive_sha256": "625fcd8270456342db8754427250eaba862686576b27bc5dbec84d9af5aa4915",
+    "paper": "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers",
+    "specific_rate_anchors": "main.tex:604-614,724-735",
+    "wording_scope": "first time in asynchronous optimization"
+  }
+}

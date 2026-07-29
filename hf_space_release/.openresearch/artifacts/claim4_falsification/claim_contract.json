@@ -1,0 +1,14 @@
+{
+  "claim_number": 4,
+  "route": "mandatory fourth route dedicated to falsification",
+  "exact_claim": "For the gradient-error norms measured in training a ResNet-18 on CIFAR-10, the empirical Vladimirova tail-parameter estimate is theta=2.71.",
+  "domain": "The authors' specific but unpublished checkpoint, gradient samples, reference gradient, preprocessing, batch construction, sample count n, and tail count k.",
+  "quantifier": "A historical point-estimate claim about one source experiment, not a universal statement over every ResNet-18 training protocol.",
+  "valid_falsification_rule": "A counterexample must reconstruct the authors' identified source protocol and raw sample, independently recompute the stated estimator, and contradict 2.71 beyond a preregistered uncertainty/tolerance rule.",
+  "invalid_falsification_examples": [
+    "a different checkpoint",
+    "an unspecified estimator cutoff",
+    "a failed download or implementation",
+    "a real but non-identical CIFAR-10 protocol"
+  ]
+}

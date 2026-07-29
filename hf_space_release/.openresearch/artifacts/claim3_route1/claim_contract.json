@@ -1,0 +1,8 @@
+{
+  "claim": 3,
+  "route": 1,
+  "route_name": "published-proof algebra and dependency audit",
+  "target": "Theorems 4.3 and 5.2 as stated, including the explicit polylogarithmic dependence on delta",
+  "pass_condition": "The audit independently recomputes every flagged displayed implication, detects all known inconsistencies, and rejects weakened negative controls.",
+  "claim_verdict_rule": "VERIFIED only if the published proof reaches the exact headline expression; FALSIFIED only with an assumption-satisfying counterexample; otherwise BLOCKED."
+}

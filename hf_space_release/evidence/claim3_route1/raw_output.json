@@ -1,0 +1,94 @@
+{
+  "audit_status": "PASS",
+  "claim": 3,
+  "claim_verdict": "BLOCKED",
+  "compute": {
+    "actual_core_requirement": 1,
+    "estimated_cores": 1,
+    "expected_runtime": "under five minutes",
+    "gpu_allowed": false,
+    "selected_backend": "local"
+  },
+  "exact_claim": {
+    "event": "P((1/T) sum_{t=0}^{T-1} ||grad f(x_t)|| <= epsilon) >= 1-delta",
+    "heterogeneous_complexity": [
+      "(sigma^2+zeta^2) log(1/delta)^(2 theta) / epsilon^4",
+      "(sigma+zeta) tau_C log(1/delta)^theta / epsilon^3",
+      "tau_C / epsilon^2"
+    ],
+    "homogeneous_complexity": [
+      "sigma^2 log(1/delta)^(2 theta) / epsilon^4",
+      "sigma tau_C log(1/delta)^theta / epsilon^3",
+      "tau_C / epsilon^2"
+    ],
+    "novelty": "to the best of the authors' knowledge, the first high-probability convergence result in asynchronous optimization",
+    "quantifiers": [
+      "for every epsilon in (0,1)",
+      "for every failure probability delta in (0,1)",
+      "there exist a constant step size eta and clipping radius c"
+    ]
+  },
+  "findings": [
+    {
+      "code": "INC_BOUND_FACTOR_TWO",
+      "derived_coefficient_of_eta_c_squared": 1.5,
+      "effect": "the displayed Freedman increment bound is too small by a factor of two; constants can be repaired but the printed application is not valid as written",
+      "location": "main.tex:1420-1429",
+      "premises": [
+        "|Z_t| <= 2 eta (c/2 + eta c tau_C L)c",
+        "eta tau_C L <= 1/4"
+      ],
+      "printed_coefficient_of_eta_c_squared": 0.75
+    },
+    {
+      "code": "TAIL_SUM_MISSING_CARDINALITY",
+      "effect": "the displayed sum inequality is false for more than one nonzero term, although the following per-step use can be repaired from a simultaneous union bound",
+      "location": "main.tex:1477-1484",
+      "printed": "sum over t in T^c of squared noise <= one per-step sub-Weibull threshold",
+      "valid_union_bound_form": "each squared noise term <= threshold simultaneously, or the sum <= |T^c| times threshold"
+    },
+    {
+      "code": "NORMALIZATION_DROPPED",
+      "effect": "the next display restores the 1/T scaling implicitly, so the intervening displayed implication is not valid as written",
+      "left_side_normalized_by_T": true,
+      "location": "main.tex:1508-1519",
+      "printed_freedman_term": "4 c^2 log(2/delta)",
+      "required_freedman_term": "4 c^2 log(2/delta) / T"
+    },
+    {
+      "appendix_term": "(sigma^2 log(1/delta)^(2 theta + 1) + zeta^2) / epsilon^2",
+      "code": "APPENDIX_EXTRA_DELTA_TERM",
+      "effect": "the appendix's own final sufficient iteration count is strictly different from the displayed headline formula",
+      "headline_term_present": false,
+      "location": "main.tex:1527-1545"
+    }
+  ],
+  "interpretation": {
+    "established": "the exact published proof contains reproducible gaps and ends with an additional failure-probability term",
+    "not_established": "these gaps do not constitute a counterexample to the theorem; a sharper proof may still establish the headline rate",
+    "reason_blocked": "route 1 cannot certify the exact headline theorem or falsify it"
+  },
+  "negative_controls": {
+    "accept_printed_increment_coefficient": "must be rejected",
+    "accept_sum_without_cardinality": "must be rejected",
+    "accept_unnormalized_freedman_term": "must be rejected",
+    "drop_appendix_extra_term": "must be rejected"
+  },
+  "repaired_local_controls": {
+    "expected_result": "all three local algebra controls pass",
+    "freedman_term": "4 c^2 log(2/delta) / T",
+    "increment_coefficient": 1.5,
+    "tail_statement": "for all t in T^c, squared noise_t <= threshold on a simultaneous event"
+  },
+  "route": "published-proof algebra and dependency audit",
+  "runtime_seconds": 0.000003,
+  "schema_version": 1,
+  "source": {
+    "appendix_proof_lines": "main.tex:1350-1548",
+    "freedman_lemma_lines": "main.tex:1019-1027",
+    "headline_heterogeneous_lines": "main.tex:724-735",
+    "headline_homogeneous_lines": "main.tex:601-635",
+    "latex_archive_sha256": "625fcd8270456342db8754427250eaba862686576b27bc5dbec84d9af5aa4915",
+    "paper_html_sha256": "292ba2ce9a95e41279fe1535ffa23b720f18fb2139c3e26324138c0d4a0304ff"
+  }
+}

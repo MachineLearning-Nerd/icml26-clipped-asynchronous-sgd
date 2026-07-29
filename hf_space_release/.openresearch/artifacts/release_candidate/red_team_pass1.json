@@ -1,0 +1,121 @@
+{
+  "candidate_root_name": "hf-candidate-pass1.0K7COn",
+  "claim_conclusions": {
+    "1": {
+      "missing_requirements": [],
+      "verdict_located": "VERIFIED"
+    },
+    "2": {
+      "missing_requirements": [],
+      "verdict_located": "VERIFIED"
+    },
+    "3": {
+      "missing_requirements": [
+        "exact claim",
+        "limitation"
+      ],
+      "verdict_located": null
+    },
+    "4": {
+      "missing_requirements": [
+        "limitation",
+        "git"
+      ],
+      "verdict_located": null
+    },
+    "5": {
+      "missing_requirements": [
+        "exact claim"
+      ],
+      "verdict_located": null
+    },
+    "6": {
+      "missing_requirements": [
+        "source",
+        "limitation"
+      ],
+      "verdict_located": null
+    }
+  },
+  "entrypoints": [
+    "README.md",
+    "logbook.json",
+    "pages/index.md"
+  ],
+  "errors": [
+    "claim 3 missing discoverable exact claim",
+    "claim 3 missing discoverable limitation",
+    "claim 4 missing discoverable git",
+    "claim 4 missing discoverable limitation",
+    "claim 5 missing discoverable exact claim",
+    "claim 6 missing discoverable limitation",
+    "claim 6 missing discoverable source",
+    "current page missing release token: Historical rejected baseline",
+    "missing release file: MANIFEST.sha256",
+    "missing release file: UPLOAD_ALLOWLIST.txt"
+  ],
+  "opened_files": [
+    "README.md",
+    "evidence/claim3_route1/independent_check.py",
+    "evidence/claim3_route1/raw_output.json",
+    "evidence/claim3_route2/independent_check.py",
+    "evidence/claim3_route2/raw_output.json",
+    "evidence/claim3_route3/claim_contract.json",
+    "evidence/claim3_route3/independent_check.py",
+    "evidence/claim3_route3/raw_output.json",
+    "evidence/claim3_route3/source_audit.md",
+    "evidence/claim3_route3/verify.py",
+    "evidence/claim4/independent_check.py",
+    "evidence/claim4/raw_output.json",
+    "evidence/claim4/verify.py",
+    "evidence/claim4_falsification/claim_contract.json",
+    "evidence/claim4_falsification/raw_output.json",
+    "evidence/claim4_falsification/verify.py",
+    "evidence/claim4_tail_audit/independent_check.py",
+    "evidence/claim4_tail_audit/raw_output.json",
+    "evidence/claim4_trained/raw_output.json",
+    "evidence/claim4_trained/verify.py",
+    "evidence/claim5_source_audit/claim_contract.json",
+    "evidence/claim5_source_audit/independent_check.py",
+    "evidence/claim5_source_audit/limitations.md",
+    "evidence/claim5_source_audit/raw_output.json",
+    "evidence/claim5_source_audit/source_audit.md",
+    "evidence/claim5_source_audit/verify.py",
+    "evidence/claim6_d4_sweep/independent_check.py",
+    "evidence/claim6_d4_sweep/raw_output.json",
+    "evidence/claim6_d8_sweep/independent_check.py",
+    "evidence/claim6_d8_sweep/raw_output.json",
+    "evidence/claim6_falsification/independent_check.py",
+    "evidence/claim6_falsification/raw_output.json",
+    "evidence/claim6_falsification/verify.py",
+    "evidence/claim6_validation/claim_contract.json",
+    "evidence/claim6_validation/independent_check.py",
+    "evidence/claim6_validation/raw_output.json",
+    "evidence/claim6_validation/verify.py",
+    "evidence/expectation_theorems/claim_contract.json",
+    "evidence/expectation_theorems/derivation.md",
+    "evidence/expectation_theorems/independent_check.py",
+    "evidence/expectation_theorems/limitations.md",
+    "evidence/expectation_theorems/raw_output.json",
+    "evidence/expectation_theorems/source_audit.md",
+    "evidence/expectation_theorems/verify.py",
+    "evidence/pyproject.toml",
+    "evidence/reproduction/config.json",
+    "evidence/reproduction/run.py",
+    "evidence/uv.lock",
+    "logbook.json",
+    "pages/claim-1/page.md",
+    "pages/claim-2/page.md",
+    "pages/claim-3/page.md",
+    "pages/claim-4/page.md",
+    "pages/claim-5/page.md",
+    "pages/claim-6/page.md",
+    "pages/current/page.md",
+    "pages/index.md",
+    "pages/overview/page.md",
+    "pages/release-report/page.md"
+  ],
+  "review_mode": "evaluator-blind-canonical-entrypoint-traversal",
+  "schema_version": 1,
+  "status": "FAIL"
+}

@@ -1,0 +1,8 @@
+{
+  "claim_number": 4,
+  "route": "third materially distinct scientific route",
+  "exact_statement": "The empirical estimate of the ResNet-18/CIFAR-10 gradient-error tail parameter is theta=2.71.",
+  "interpretation": "The missing upper-order-statistic count k is the only varied protocol choice; all admissible k from 3 through n-1 are audited on the trained-checkpoint raw norms.",
+  "verification_rule": "If an admissible k yields 2.71, estimator cutoff ambiguity can explain the discrepancy under this checkpoint. If none does, cutoff ambiguity is rejected for this checkpoint but the paper claim remains BLOCKED because the checkpoint and gradient sampling protocol are unpublished.",
+  "non_circularity": "The k domain is exhaustive and was specified before results; no k or tolerance is selected from the reported value."
+}

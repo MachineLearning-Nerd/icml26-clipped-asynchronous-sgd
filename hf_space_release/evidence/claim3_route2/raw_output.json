@@ -1,0 +1,99 @@
+{
+  "audit_status": "PASS",
+  "claim": 3,
+  "claim_verdict": "BLOCKED",
+  "compute": {
+    "actual_core_requirement": 1,
+    "estimated_cores": 1,
+    "expected_runtime": "under five minutes",
+    "gpu_allowed": false,
+    "selected_backend": "local"
+  },
+  "freedman_reconstruction": {
+    "absorbed_descent_coefficient": 0.25,
+    "bounded_increment_coefficient": 1.5,
+    "normalized_remainder": "16 c^2 log(2/delta)/T",
+    "remainder_coefficient": 16.0,
+    "rho": 0.09375,
+    "variance_coefficient": 4
+  },
+  "interpretation": {
+    "exact_headline_derived": false,
+    "local_repairs_succeed": true,
+    "not_a_falsification": "a different concentration argument might remove or absorb the term, so failure of this proof route is not a theorem counterexample",
+    "reason": "the corrected Freedman remainder still produces an additional delta-dependent epsilon^-2 sufficient-complexity term"
+  },
+  "negative_controls": {
+    "drop_extra_log_from_residual": "must be rejected",
+    "drop_horizon_normalization": "must be rejected",
+    "promote_repaired_derivation_to_headline": "must be rejected",
+    "rho_3_over_16_with_correct_increment_gives_one_half_not_one_quarter": {
+      "absorption": 0.5,
+      "must_be_rejected": true,
+      "rho": 0.1875
+    }
+  },
+  "rate_reconstruction": {
+    "clipping_radius_squared": "O(sigma^2 log(T/delta)^(2theta)+zeta^2)",
+    "headline_contains_term": false,
+    "residual_before_inversion": "O(sqrt((sigma^2 log(T/delta)^(2theta)+zeta^2) log(1/delta)/T))",
+    "sufficient_iteration_term": "O((sigma^2 log(1/delta)^(2theta+1)+zeta^2 log(1/delta))/epsilon^2), suppressing T/epsilon polylogs"
+  },
+  "repair_dag": [
+    {
+      "depends_on": [],
+      "id": "R1",
+      "statement": "Use |psi_t Z_t| <= (3/2) eta c^2 under eta tau_C L <= 1/4."
+    },
+    {
+      "depends_on": [
+        "R1"
+      ],
+      "id": "R2",
+      "statement": "Use conditional variance <= 4 eta^2 c^2 A_t and Freedman rho=3/32."
+    },
+    {
+      "depends_on": [
+        "R2"
+      ],
+      "id": "R3",
+      "statement": "Absorb (1/4) eta sum A_t and retain 16 eta c^2 log(2/delta)."
+    },
+    {
+      "depends_on": [
+        "R3"
+      ],
+      "id": "R4",
+      "statement": "After division and normalization, retain 16 c^2 log(2/delta)/T."
+    },
+    {
+      "depends_on": [
+        "R4"
+      ],
+      "id": "R5",
+      "statement": "Apply a simultaneous per-step sub-Weibull union bound, not the invalid unnormalized sum inequality."
+    },
+    {
+      "depends_on": [
+        "R5"
+      ],
+      "id": "R6",
+      "statement": "With c^2 of order sigma^2 log(T/delta)^(2theta)+zeta^2, the Freedman remainder contributes a square-root rate with one additional log(1/delta) factor."
+    },
+    {
+      "depends_on": [
+        "R6"
+      ],
+      "id": "R7",
+      "statement": "Inverting that residual for accuracy epsilon requires (sigma^2 log(1/delta)^(2theta+1)+zeta^2 log(1/delta))/epsilon^2, up to T/epsilon polylogs."
+    }
+  ],
+  "route": "locally repaired Freedman derivation",
+  "runtime_seconds": 0.000004,
+  "schema_version": 1,
+  "source": {
+    "freedman_lemma_lines": "main.tex:1019-1027",
+    "latex_archive_sha256": "625fcd8270456342db8754427250eaba862686576b27bc5dbec84d9af5aa4915",
+    "proof_lines": "main.tex:1350-1548"
+  }
+}

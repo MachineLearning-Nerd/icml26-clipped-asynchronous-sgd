@@ -1,0 +1,14 @@
+{
+  "audited_k_count": 125,
+  "closest": {
+    "k": 7,
+    "theta": 0.23450707121079778
+  },
+  "errors": [],
+  "event": "CLAIM4_TAIL_AUDIT_INDEPENDENT_CHECK",
+  "maximum": {
+    "k": 7,
+    "theta": 0.23450707121079778
+  },
+  "status": "PASS"
+}

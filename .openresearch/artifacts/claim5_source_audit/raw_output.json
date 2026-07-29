@@ -1,0 +1,115 @@
+{
+  "audit_status": "PASS",
+  "claim": 5,
+  "claim_contract": {
+    "cifar_conjunct": {
+      "comparator": "Vanilla ASGD",
+      "dataset": "CIFAR-10",
+      "delay": "D4",
+      "speedup": 1.8
+    },
+    "compound_rule": "both coordinated conjuncts must be true; one contradiction falsifies the imported compound claim",
+    "coordination_interpretation": "the only named comparator, vanilla ASGD, is carried across the coordinated CIFAR-10 and Shakespeare clauses",
+    "shakespeare_conjunct": {
+      "claimed_range": [
+        2.0,
+        2.2
+      ],
+      "comparator": "Vanilla ASGD",
+      "dataset": "Shakespeare",
+      "delays": [
+        "D4",
+        "D8"
+      ]
+    }
+  },
+  "claim_verdict": "FALSIFIED",
+  "comparison": {
+    "D4_inside_claimed_range": false,
+    "D8_inside_claimed_range": true,
+    "cifar_conjunct_matches": true,
+    "compound_claim_true": false,
+    "shakespeare_claimed_range": [
+      2.0,
+      2.2
+    ],
+    "shakespeare_vanilla_values_by_delay": {
+      "D4": 1.8,
+      "D8": 2.0
+    }
+  },
+  "compute": {
+    "actual_core_requirement": 1,
+    "estimated_cores": 1,
+    "expected_runtime": "under five minutes",
+    "gpu_allowed": false,
+    "selected_backend": "local"
+  },
+  "confidence": "MEDIUM",
+  "controls": {
+    "corrected_vanilla_range_1_8_to_2_0": {
+      "expected": "PASS",
+      "values": [
+        1.8,
+        2.0
+      ]
+    },
+    "delay_adaptive_range_2_1_to_2_2": {
+      "expected": "PASS only when comparator is explicitly changed",
+      "values": [
+        2.1,
+        2.2
+      ]
+    },
+    "mixed_comparator_values": {
+      "expected": "REJECT: changing comparator with delay is not the stated depending-on-delay comparison"
+    }
+  },
+  "imported_claim": "On CIFAR-10 with delay factor D=4, Clipped ASGD achieves a 1.8x wall-clock speedup over vanilla ASGD (Figure 2), and on Shakespeare it achieves 2.0-2.2x speedup depending on the delay regime (Figure 3).",
+  "interpretation_risk": {
+    "reason_for_medium_not_high": "the Shakespeare clause omits a repeated comparator; a reader could instead supply Delay-adaptive ASGD, whose 2.1 and 2.2 values lie in the stated range",
+    "unconstrained_comparator_reading": "BLOCKED because a speedup range without a fixed comparator is not a machine-checkable empirical claim",
+    "why_falsified_under_contract": "under the natural carried-comparator reading, the primary source directly reports 1.8x at D4 versus vanilla, below 2.0x"
+  },
+  "limitations": [
+    "This route falsifies the imported claim text under its carried comparator; it does not assert that the paper's own Figure 3 prose is false.",
+    "The author repository had no commits during the campaign, so original seeds and raw trajectories remain unavailable."
+  ],
+  "route": "exact primary-source comparator audit",
+  "runtime_seconds": 0.000009,
+  "schema_version": 1,
+  "source": {
+    "cifar_result_lines": "main.tex:786-790",
+    "figure_hashes": {
+      "cifar10_delay4.pdf": "695ccfa1fb503e56a92d4c9a25725799cb7030ed2932826a357c0429c5cb225a",
+      "cifar10_delay8.pdf": "9d4cdc0ee60ede63237aaf770ab869baadf55d56d152dd732a46046e109b7e45",
+      "shakespeare_delay4.pdf": "6affc402463c5bfb7a781c7bc95d6f68fd61ceada7999720b291a08ee404228b",
+      "shakespeare_delay8.pdf": "3ba8e5ff9c7fcb2268bc32a571aaa7721903ad62cafd4feed8b0cb5b6d13de08"
+    },
+    "latex_archive_sha256": "625fcd8270456342db8754427250eaba862686576b27bc5dbec84d9af5aa4915",
+    "paper_html_sha256": "292ba2ce9a95e41279fe1535ffa23b720f18fb2139c3e26324138c0d4a0304ff",
+    "protocol_lines": "main.tex:758-784",
+    "shakespeare_result_lines": "main.tex:821-833"
+  },
+  "source_reported_speedups": {
+    "CIFAR-10": {
+      "D4": {
+        "Delay-adaptive ASGD": 1.5,
+        "Ringmaster ASGD": 1.5,
+        "Vanilla ASGD": 1.8
+      }
+    },
+    "Shakespeare": {
+      "D4": {
+        "Delay-adaptive ASGD": 2.1,
+        "Ringmaster ASGD": 1.8,
+        "Vanilla ASGD": 1.8
+      },
+      "D8": {
+        "Delay-adaptive ASGD": 2.2,
+        "Ringmaster ASGD": 1.4,
+        "Vanilla ASGD": 2.0
+      }
+    }
+  }
+}

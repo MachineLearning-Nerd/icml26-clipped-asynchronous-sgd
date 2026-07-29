@@ -1,0 +1,9 @@
+{
+  "claims": [1, 2],
+  "claim_1": "Under Assumptions 3.1-3.2, for every epsilon in (0,1), there are a constant-across-iterations eta and clipping radius c for Algorithm 1 giving soft-O(sigma^2/epsilon^4 + sigma*tau_C/epsilon^3 + tau_C/epsilon^2) oracle complexity, independent of tau_max.",
+  "claim_2": "Under Assumptions 3.1-3.2 and 5.1, the analogous Algorithm 2 complexity is soft-O((sigma^2+zeta^2)/epsilon^4 + (sigma+zeta)*tau_C/epsilon^3 + tau_C/epsilon^2), independent of tau_max.",
+  "verification_domain": "Universal epsilon theorem; proof-level symbolic derivation, not finite empirical corroboration.",
+  "verified_rule": "Every analytic dependency, parameter constraint, complexity inversion, specialization, and forbidden-symbol check passes.",
+  "negative_controls": "Inject tau_max, change epsilon^-4 to epsilon^-3, and remove a proof dependency; every mutation must make the checker nonzero.",
+  "non_circularity": "No data, sampled horizon, tolerance, or formula-sized empirical run is used."
+}

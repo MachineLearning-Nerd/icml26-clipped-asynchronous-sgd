@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "Clipping Makes Async SGD Robust to Stragglers (AmgjQp4vrr)",
+  "emoji": "🎯",
+  "space_id": "DineshAI/AmgjQp4vrr",
+  "paper": {
+    "arxiv": "2606.13287",
+    "openreview": "AmgjQp4vrr"
+  },
+  "tags": [
+    "icml2026-repro",
+    "paper-AmgjQp4vrr"
+  ],
+  "updated_at": "2026-07-29T00:00:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Clipping Makes Async SGD Robust to Stragglers (AmgjQp4vrr)",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "current",
+        "title": "Current cumulative verification",
+        "file": "pages/current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-1",
+        "title": "Claim 1 — VERIFIED",
+        "file": "pages/claim-1/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2",
+        "title": "Claim 2 — VERIFIED",
+        "file": "pages/claim-2/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3",
+        "title": "Claim 3 — FALSIFIED",
+        "file": "pages/claim-3/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-4",
+        "title": "Claim 4 — BLOCKED",
+        "file": "pages/claim-4/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-5",
+        "title": "Claim 5 — FALSIFIED",
+        "file": "pages/claim-5/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-6",
+        "title": "Claim 6 — BLOCKED",
+        "file": "pages/claim-6/page.md",
+        "children": []
+      },
+      {
+        "slug": "release-report",
+        "title": "Release report and visibility",
+        "file": "pages/release-report/page.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "Historical rejected baseline",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 16384,
+  "revision": "candidate-2026-07-29"
+}

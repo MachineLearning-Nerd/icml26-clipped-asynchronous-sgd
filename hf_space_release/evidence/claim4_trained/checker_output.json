@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "event": "CLAIM4_TRAINED_INDEPENDENT_CHECK",
+  "recomputed_theta": 0.22464829502341546,
+  "recorded_theta": 0.2246482950234154,
+  "status": "PASS"
+}

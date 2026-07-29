@@ -1,0 +1,7 @@
+{
+  "claim": 3,
+  "route": 2,
+  "route_name": "locally repaired Freedman derivation",
+  "pass_condition": "Reconstruct the high-probability descent after repairing route 1's local errors, independently recompute all constants and delta exponents, and reject any unsupported removal of the residual term.",
+  "verdict_rule": "VERIFIED only if the repaired DAG derives the exact headline rate; FALSIFIED only with an assumption-satisfying counterexample; otherwise BLOCKED."
+}
