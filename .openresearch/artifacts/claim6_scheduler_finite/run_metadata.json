@@ -1,0 +1,13 @@
+{
+  "run_id": "d0751126-473b-44af-9a07-8e294126a61c",
+  "source_git_sha": "2cc5403bc184a82f1a17fc41fccf0ef4deeea4d9",
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "backend": "local",
+  "estimated_cores": 1,
+  "implementation": "single-threaded Python discrete-event Monte Carlo",
+  "actual_host_cpu_count_visible": 8,
+  "gpu_visible": false,
+  "verifier_runtime_seconds": 83.662411,
+  "cumulative_evaluator_runtime_seconds": 85.045705,
+  "source_run_status": "done"
+}
