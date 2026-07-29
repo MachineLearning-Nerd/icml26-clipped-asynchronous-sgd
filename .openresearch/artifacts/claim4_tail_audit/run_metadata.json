@@ -1,0 +1,13 @@
+{
+  "run_id": "12149f68-144d-446d-abc8-ecee036b0ea7",
+  "source_git_sha": "af69d3cf43715e7bdea9b65250aa5478be1e39ef",
+  "fixed_command": "uv run --frozen python -m reproduction.run",
+  "backend": "local",
+  "estimated_cores": 1,
+  "implementation": "single-threaded scalar Python",
+  "actual_host_cpu_count_visible": 8,
+  "gpu_visible": false,
+  "verifier_runtime_seconds": 0.006795,
+  "cumulative_evaluator_runtime_seconds": 0.638634,
+  "source_run_status": "done"
+}
