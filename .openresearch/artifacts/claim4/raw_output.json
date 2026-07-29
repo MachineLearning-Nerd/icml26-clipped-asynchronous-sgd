@@ -1,0 +1,155 @@
+{
+  "bootstrap": {
+    "high_95": 0.08854716845279476,
+    "low_95": 0.01213266753952024,
+    "replicates": 400
+  },
+  "claim": "Figure 1 empirical ResNet-18/CIFAR-10 tail estimate theta=2.71",
+  "claim_number": 4,
+  "dataset": {
+    "batch_size": 128,
+    "downloaded_archive_md5_documented_by_torchvision": "c58f30108f718f92721af3b95e74349a",
+    "error_examples": 3072,
+    "name": "torchvision CIFAR10 train",
+    "reference_examples": 2048,
+    "size": 50000
+  },
+  "estimator": {
+    "primary_tail_fraction": 0.3333333333333333,
+    "regression_predictor": "log log(n/i)",
+    "regression_response": "log Y_(n-i+1,n)",
+    "source": "Vladimirova et al. (2020), Section 4 tail parameter estimation"
+  },
+  "gradient_error_norms": [
+    3.473382182334121,
+    3.381974033928213,
+    3.433307736944255,
+    3.271161329874425,
+    3.6142954077456095,
+    3.3671146153445903,
+    3.447892092381694,
+    3.4483173499588533,
+    3.4497824593228037,
+    3.662316594869898,
+    3.4281118852032213,
+    3.68989267597491,
+    3.3141723194396677,
+    3.256613036513866,
+    3.4180644747235744,
+    3.664862517403256,
+    3.3414058747443014,
+    3.705632424160476,
+    3.2075656331461073,
+    3.4090954459354603,
+    3.365827884372435,
+    3.402397594443368,
+    3.2075511638439673,
+    3.4462719634715304
+  ],
+  "model": {
+    "checkpoint": "deterministic Kaiming initialization; no training",
+    "name": "torchvision ResNet-18 with CIFAR 3x3 stem and no max-pool",
+    "parameter_count": 11173962
+  },
+  "negative_control": {
+    "cases": [
+      {
+        "absolute_error": 0.005781550356700138,
+        "distribution": "numpy Weibull",
+        "expected_theta": 0.5,
+        "observed": {
+          "intercept": 0.00915492380752564,
+          "k": 1000,
+          "n": 100000,
+          "r_squared": 0.9964059812196064,
+          "theta": 0.49421844964329986
+        },
+        "pass": true,
+        "tolerance": 0.18
+      },
+      {
+        "absolute_error": 0.014310986468740738,
+        "distribution": "numpy Weibull",
+        "expected_theta": 1.0,
+        "observed": {
+          "intercept": -0.026265494926860485,
+          "k": 1000,
+          "n": 100000,
+          "r_squared": 0.9977326575735598,
+          "theta": 1.0143109864687407
+        },
+        "pass": true,
+        "tolerance": 0.18
+      },
+      {
+        "absolute_error": 0.10177978049599146,
+        "distribution": "numpy Weibull",
+        "expected_theta": 2.71,
+        "observed": {
+          "intercept": -0.18054985196696113,
+          "k": 1000,
+          "n": 100000,
+          "r_squared": 0.9979387563634919,
+          "theta": 2.8117797804959914
+        },
+        "pass": true,
+        "tolerance": 0.18
+      }
+    ],
+    "name": "known-theta estimator calibration",
+    "negative_case": {
+      "expected_theta": 2.71,
+      "name": "reciprocal shape-parameter convention",
+      "observed_theta_if_wrong": 0.35564662884929144,
+      "passes_claim_threshold": false,
+      "rejected_as_intended": true,
+      "tolerance": 0.18
+    },
+    "pass": true
+  },
+  "primary_estimate": {
+    "intercept": 1.2333086148773489,
+    "k": 8,
+    "n": 24,
+    "r_squared": 0.8236857883343081,
+    "theta": 0.07891913452514868
+  },
+  "reason": "The paper omits the training checkpoint, batch size, preprocessing, sample count, reference-gradient construction, and tail fraction k/n. This preregistered pilot is a real-data protocol calibration, not an assumption-identical verification or falsification.",
+  "reported_theta": 2.71,
+  "reported_theta_in_pilot_bootstrap_interval": false,
+  "runtime_seconds": 2048.09019,
+  "schema_version": 1,
+  "seed": 20260728,
+  "tail_fraction_sensitivity": [
+    {
+      "intercept": 1.246434369553303,
+      "k": 6,
+      "n": 24,
+      "r_squared": 0.6686834642047572,
+      "theta": 0.06342415355417776
+    },
+    {
+      "intercept": 1.2333086148773489,
+      "k": 8,
+      "n": 24,
+      "r_squared": 0.8236857883343081,
+      "theta": 0.07891913452514868
+    },
+    {
+      "intercept": 1.2383455408092543,
+      "k": 10,
+      "n": 24,
+      "r_squared": 0.8573703567514702,
+      "theta": 0.07197871325184367
+    },
+    {
+      "intercept": 1.2436820658122156,
+      "k": 12,
+      "n": 24,
+      "r_squared": 0.8583736212834916,
+      "theta": 0.06360227146539912
+    }
+  ],
+  "threads": 8,
+  "verdict": "BLOCKED"
+}

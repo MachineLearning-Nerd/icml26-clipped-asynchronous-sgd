@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "absolute_error": 0.005781550356700138,
+      "distribution": "numpy Weibull",
+      "expected_theta": 0.5,
+      "observed": {
+        "intercept": 0.00915492380752564,
+        "k": 1000,
+        "n": 100000,
+        "r_squared": 0.9964059812196064,
+        "theta": 0.49421844964329986
+      },
+      "pass": true,
+      "tolerance": 0.18
+    },
+    {
+      "absolute_error": 0.014310986468740738,
+      "distribution": "numpy Weibull",
+      "expected_theta": 1.0,
+      "observed": {
+        "intercept": -0.026265494926860485,
+        "k": 1000,
+        "n": 100000,
+        "r_squared": 0.9977326575735598,
+        "theta": 1.0143109864687407
+      },
+      "pass": true,
+      "tolerance": 0.18
+    },
+    {
+      "absolute_error": 0.10177978049599146,
+      "distribution": "numpy Weibull",
+      "expected_theta": 2.71,
+      "observed": {
+        "intercept": -0.18054985196696113,
+        "k": 1000,
+        "n": 100000,
+        "r_squared": 0.9979387563634919,
+        "theta": 2.8117797804959914
+      },
+      "pass": true,
+      "tolerance": 0.18
+    }
+  ],
+  "name": "known-theta estimator calibration",
+  "negative_case": {
+    "expected_theta": 2.71,
+    "name": "reciprocal shape-parameter convention",
+    "observed_theta_if_wrong": 0.35564662884929144,
+    "passes_claim_threshold": false,
+    "rejected_as_intended": true,
+    "tolerance": 0.18
+  },
+  "pass": true
+}

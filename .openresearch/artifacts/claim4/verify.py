@@ -1,9 +1,8 @@
-"""Fail-closed Claim 4 pilot verifier."""
+"""Fail-closed verifier for the committed Claim 4 pilot evidence."""
 
 from __future__ import annotations
 
 import json
-import subprocess
 import sys
 from pathlib import Path
 
@@ -13,19 +12,8 @@ CHECKER = Path(__file__).with_name("independent_check.py")
 
 
 def main() -> int:
-    experiment = subprocess.run(
-        [sys.executable, "-m", "reproduction.claims.claim4"],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
-    print(experiment.stdout, end="")
-    if experiment.stderr:
-        print(experiment.stderr, file=sys.stderr, end="")
-    if experiment.returncode != 0:
-        print(json.dumps({"event": "CLAIM4_VERIFY", "status": "FAIL", "stage": "experiment"}))
-        return experiment.returncode
+    import subprocess
+
     checker = subprocess.run(
         [sys.executable, str(CHECKER)],
         cwd=ROOT,
@@ -37,7 +25,17 @@ def main() -> int:
     if checker.stderr:
         print(checker.stderr, file=sys.stderr, end="")
     status = "PASS" if checker.returncode == 0 else "FAIL"
-    print(json.dumps({"event": "CLAIM4_VERIFY", "status": status, "stage": "complete"}))
+    print(
+        json.dumps(
+            {
+                "event": "CLAIM4_VERIFY",
+                "status": status,
+                "stage": "committed-evidence-check",
+                "source_run": "512fbeef-0db3-44ec-81e8-7fcba10ba53e",
+                "source_run_status": "failed: backend timeout after complete payload",
+            }
+        )
+    )
     return checker.returncode
 
 

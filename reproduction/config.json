@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "campaign": "arxiv-2606.13287",
-  "mode": "claim4_pilot",
+  "mode": "claim4_pilot_committed_evidence",
   "seed": 20260728,
   "compute_plan": {
-    "estimated_cores": 8,
-    "runtime_class": "uncertain real CIFAR-10 ResNet-18 gradient computation",
+    "estimated_cores": 1,
+    "runtime_class": "short static verification; frozen environment setup remains uncertain",
     "backend": "hf",
     "flavor": "cpu-upgrade",
     "image": "ghcr.io/astral-sh/uv:0.11.29-python3.12-trixie-slim",
