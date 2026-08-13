@@ -95,8 +95,8 @@ the live score is unchanged until the judge evaluates that revision.
 
 Key experiment branches:
 
-- [Claims 1–2 proof certificate](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claims-1-and-2-constructive-expectation-theorem)
-- [Claim 3 prior-art falsification](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-3-route-3-prior-art-falsification)
-- [Claim 5 source audit](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/claim-5-exact-source-and-comparator-audit)
-- [Winning portable cumulative release](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/portable-cumulative-release-hash-pin)
-- [Final publication regression](https://github.com/MachineLearning-Nerd/icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle/tree/orx/final-publication-metadata-and-cumulative-regres)
+- [Claims 1–2 proof certificate](https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd/tree/audit/c1-c2-expectation-rates)
+- [Claim 3 prior-art falsification](https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd/tree/audit/c3-prior-art)
+- [Claim 5 source audit](https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd/tree/audit/c5-comparator-source)
+- [Winning portable cumulative release](https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd/tree/release/portable-hash-pin)
+- [Final publication regression](https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd/tree/release/final-regression)
