@@ -6,6 +6,14 @@ Independent claim-by-claim reproduction audit for [arXiv:2606.13287](https://arx
 
 The repository was renamed from `icml26-repro-AmgjQp4vrr-clipping-makes-distributed-and-federated-asynchronous-sgd-robust-to-straggle` to `icml26-clipped-asynchronous-sgd` so the public URL describes the method and paper rather than the challenge identifier.
 
+## Audit status
+
+`PARTIAL_C1_C2_VERIFIED_C3_NOVELTY_FALSIFIED_RATE_BLOCKED_C4_BLOCKED_C5_FALSIFIED_VANILLA_COMPARATOR_C6_BLOCKED_HISTORICAL_SCORE_4_OF_12_NO_CURRENT_SCORE`
+
+Claims 1–2 pass the finite symbolic expectation-rate certificate. Claim 3 is compound: its broad “first high-probability asynchronous result” novelty clause is falsified by a primary 2021 result, while its narrower theta-dependent rate remains blocked. Claim 5 is falsified under the carried Vanilla-ASGD comparator, with comparator ambiguity recorded. Claims 4 and 6 remain blocked because the authors’ historical checkpoints, raw curves, and omitted protocol fields are unavailable. The historical 4/12 judge result is preserved; the 6–9/12 values are forecasts only. There is no current judge score claim or author endorsement claim.
+
+The maintained dossier is [`STATUS.md`](STATUS.md), with claim production paths in [`CLAIM_EVIDENCE.md`](CLAIM_EVIDENCE.md), source pins in [`SOURCE_AUDIT.md`](SOURCE_AUDIT.md), environment details in [`ENVIRONMENT.md`](ENVIRONMENT.md), and a machine-checkable final audit in [`verify_final.py`](verify_final.py).
+
 ## What the paper does
 
 The paper studies asynchronous stochastic gradient descent under delayed updates and heavy-tailed gradient noise. It argues that gradient clipping removes maximum-delay dependence from oracle-complexity bounds, develops expectation and high-probability convergence results under a sub-Weibull noise model, and evaluates the method on CIFAR-10 and Shakespeare workloads.
@@ -131,6 +139,6 @@ Thank you to Samuel Erickson and Mikael Johansson for making the assumptions, de
 
 Repository maintenance commits in the cleaned branch histories use:
 
-`MachineLearning-Nerd <37579156+MachineLearning-Nerd@users.noreply.github.com>`
+`MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>`
 
 The paper and its authors remain the source of the research claims; this repository contains an independent reproduction and audit record.

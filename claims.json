@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers",
+    "arxiv": "2606.13287",
+    "authors": ["Samuel Erickson", "Mikael Johansson"]
+  },
+  "overall_status": "PARTIAL_C1_C2_VERIFIED_C3_NOVELTY_FALSIFIED_RATE_BLOCKED_C4_BLOCKED_C5_FALSIFIED_VANILLA_COMPARATOR_C6_BLOCKED_HISTORICAL_SCORE_4_OF_12_NO_CURRENT_SCORE",
+  "claims": [
+    {
+      "id": "C1",
+      "paper_anchor": "Theorem 4.2",
+      "producer": "hf_space_release/reproduction/claims/expectation_theorem.py",
+      "status": "VERIFIED_SCOPED_MEDIUM",
+      "evidence": "Constructive expectation-rate DAG passes the clipped-bias, virtual-iterate, descent, telescoping, norm-conversion, parameter, and complexity-inversion obligations.",
+      "control": "tau_max injection and wrong epsilon-exponent controls are rejected.",
+      "boundary": "Finite symbolic certificate, not a proof-assistant kernel artifact."
+    },
+    {
+      "id": "C2",
+      "paper_anchor": "Theorem 5.1",
+      "producer": "hf_space_release/reproduction/claims/expectation_theorem.py",
+      "status": "VERIFIED_SCOPED_MEDIUM",
+      "evidence": "The expectation DAG retains zeta through bias, moment, large-gradient, and complexity terms, then specializes to C1 at zeta=0.",
+      "control": "Heterogeneous and homogeneous specializations are checked with the same negative controls.",
+      "boundary": "Uniform scheduling and conditional-unbiasedness assumptions are explicit."
+    },
+    {
+      "id": "C3",
+      "paper_anchor": "Theorems 4.3/5.2 and the broad first-result statement",
+      "producer": "claim3_prior_art.py and claim3_repaired_freedman.py",
+      "status": "FALSIFIED_COMPOUND_NOVELTY_BLOCKED_NARROW_RATE",
+      "evidence": "Cohen et al. 2021 supplies an earlier arbitrary-confidence asynchronous optimization result; the repaired local rate derivation still exposes an extra delta-dependent epsilon^-2 term.",
+      "control": "Expectation-only, runtime-only, serial, and later-prior controls are excluded from the novelty contradiction.",
+      "boundary": "Only the unrestricted novelty conjunct is falsified; the theta-dependent rate remains blocked."
+    },
+    {
+      "id": "C4",
+      "paper_anchor": "Figure 1",
+      "producer": "claim4.py, claim4_trained.py, claim4_tail_audit.py",
+      "status": "BLOCKED_HISTORICAL_PROTOCOL",
+      "evidence": "Initialized and trained real CIFAR/ResNet routes produce theta 0.0789 and 0.2246; exhaustive trained-route tail fractions peak at 0.2345.",
+      "control": "Known-theta estimator and reciprocal-convention controls pass.",
+      "boundary": "The authors’ checkpoint, preprocessing, reference gradient, sample count, and tail fraction are not identified."
+    },
+    {
+      "id": "C5",
+      "paper_anchor": "Figures 2–3",
+      "producer": "claim5_source_audit.py",
+      "status": "FALSIFIED_SCOPED_VANILLA_COMPARATOR_MEDIUM",
+      "evidence": "Under Vanilla ASGD, source values are CIFAR D4 1.8x, Shakespeare D4 1.8x, and Shakespeare D8 2.0x; D4 is below the imported Shakespeare 2.0–2.2x range.",
+      "control": "Corrected Vanilla range and Delay-adaptive comparator routes are retained.",
+      "boundary": "Comparator ambiguity prevents a comparator-free universal reading."
+    },
+    {
+      "id": "C6",
+      "paper_anchor": "Figure 4",
+      "producer": "claim6_d4_sweep.py, claim6_d8_sweep.py, claim6_validation.py",
+      "status": "BLOCKED_HISTORICAL_PROTOCOL_RECONSTRUCTION",
+      "evidence": "Complete D4/D8 hyperparameter grids and independent three-seed validation are recorded; D4 speedup is 1.0227x and D8 has a censored clipped seed.",
+      "control": "Assumption-violating, historical-positive, and universal-positive controls distinguish blocked reconstruction from falsification.",
+      "boundary": "Exact CNN, sampler, seeds, queue/ties, cadence, aggregation, and author implementation remain unavailable."
+    }
+  ]
+}

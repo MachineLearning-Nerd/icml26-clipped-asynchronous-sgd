@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers"
+message: "If you use the paper, please cite the authors. If you use this reproduction audit, cite this repository as well."
+type: article
+authors:
+  - family-names: Erickson
+    given-names: Samuel
+  - family-names: Johansson
+    given-names: Mikael
+year: 2026
+url: https://arxiv.org/abs/2606.13287
+repository-code: https://github.com/MachineLearning-Nerd/icml26-clipped-asynchronous-sgd
+preferred-citation:
+  type: article
+  title: "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers"
+  authors:
+    - family-names: Erickson
+      given-names: Samuel
+    - family-names: Johansson
+      given-names: Mikael
+  year: 2026
+  url: https://arxiv.org/abs/2606.13287
